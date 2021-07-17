@@ -14,12 +14,34 @@
 		<div class="note-line" />
 		<div class="note-line" />
 	</div>
+	<div class="entered-notes">
+		<span class="inactive-note">o</span>
+		<span class="active-note">o</span>
+		<span class="inactive-note">o</span>
+	</div>
 </div>
 
 <style>
 	.notes {
 		display: flex;
 		flex-direction: row;
+	}
+	.entered-notes{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		right: 4rem;
+	}
+	.entered-notes >span {
+		display: inline-block;
+		font-size: 1.4rem;
+		filter: drop-shadow(6px 6px 5px black);
+	}
+	.active-note{
+		color: gold;
+	}
+	.inactive-note{
+		color: white;
 	}
 	img[src*='clef-white.png'] {
 		width: 7rem;
