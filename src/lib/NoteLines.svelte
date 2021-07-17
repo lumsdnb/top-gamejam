@@ -2,11 +2,11 @@
 	import { spring } from 'svelte/motion';
 </script>
 
+<picture>
+	<source srcset="/assets/clef-white.png" type="image/png" />
+	<img src="/assets/clef-white.png" alt="Welcome" />
+</picture>
 <div class="notes">
-	<picture>
-		<source srcset="clef-white.png" type="image/png" />
-		<img src="clef-white.png" alt="Welcome" />
-	</picture>
 	<div class="lines">
 		<div class="note-line" />
 		<div class="note-line" />
@@ -21,19 +21,18 @@
 		display: flex;
 		flex-direction: row;
 	}
-	.lines {
-	}
-	img[src='clef-white.png'] {
+	img[src*='clef-white.png'] {
 		width: 7rem;
 		position: relative;
-		bottom: 4rem;
-		left: 4rem;
+		top: 7.5rem;
+		right: 14rem;
+		filter: drop-shadow(6px 6px 5px black);
 	}
 	.note-line {
 		width: 70vw;
 		height: 2px;
 		background-color: white;
-		margin-bottom: 10px;
+		margin-bottom: 1.1rem;
 	}
 	.counter {
 		display: flex;

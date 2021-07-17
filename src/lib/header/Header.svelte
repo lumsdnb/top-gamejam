@@ -1,6 +1,6 @@
 <script>
   import { page } from '$app/stores';
-  import logo from './svelte-logo.svg';
+  import logo from '/static/assets/favicon.png';
 </script>
 
 <header>
@@ -18,7 +18,7 @@
       <li class:active={$page.path === '/'}>
         <a sveltekit:prefetch href="/">Home</a>
       </li>
-      <li class:active={$page.path === '/todos'}>
+      <li class:active={$page.path === '/levels'}>
         <a sveltekit:prefetch href="/levels">Levels</a>
       </li>
       <li class:active={$page.path === '/about'}>
@@ -80,7 +80,7 @@
     position: relative;
     padding: 0;
     margin: 0;
-    height: 3em;
+    height: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
