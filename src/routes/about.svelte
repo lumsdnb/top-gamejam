@@ -19,26 +19,16 @@
 </svelte:head>
 
 <div class="content">
-	<h1>About this app</h1>
+	<h1>About this game</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<!-- TODO lose the @next! -->
-	<pre>npm init svelte@next</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
+		[gamename] teaches you music theory in a fun way. 
 	</p>
 
 	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
+		This project was created as part of the first <a href="https://itch.io/jam/top-jam-1">Odin game jam</a>.
 	</p>
+	<p>don't expect this to work yet..</p>
 </div>
 
 <style>
