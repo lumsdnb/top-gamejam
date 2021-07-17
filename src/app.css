@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+* {
+  box-sizing: border-box;
+}
 :root {
   font-family: 'Press Start 2P', cursive;
   --font-mono: 'Fira Mono', monospace;
@@ -8,6 +11,10 @@
   --secondary-color: #d0dde9;
   --tertiary-color: #edf0f8;
   --accent-color: #ff3e00;
+  --bg1: #525162;
+  --bg2: #394f57;
+  --bg3: #446668;
+  --bg4: #749593;
   --heading-color: rgb(255, 255, 255);
   --text-color: #eeeeee;
   --background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -22,6 +29,7 @@ body {
   background: url(/static/bg-forest.png);
   background-repeat: no-repeat;
   background-size: cover;
+  scrollbar-width: thin;
 }
 
 #svelte {
