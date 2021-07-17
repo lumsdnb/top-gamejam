@@ -11,9 +11,7 @@
   </div>
 
   <nav>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-    </svg>
+    
     <ul>
       <li class:active={$page.path === '/'}>
         <a sveltekit:prefetch href="/">Home</a>
@@ -25,9 +23,7 @@
         <a sveltekit:prefetch href="/about">About</a>
       </li>
     </ul>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-    </svg>
+    
   </nav>
 
   <div class="corner">
@@ -61,15 +57,10 @@
   }
 
   nav {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     --background: #394f57;
-  }
-
-  svg {
-    width: 2em;
-    height: 3em;
-    display: block;
   }
 
   path {
@@ -78,7 +69,7 @@
 
   ul {
     position: relative;
-    padding: 0;
+    padding: 1rem;
     margin: 0;
     height: 2em;
     display: flex;
@@ -100,7 +91,7 @@
     width: 0;
     height: 0;
     position: absolute;
-    top: 0;
+    top: -1rem;
     left: calc(50% - var(--size));
     border: var(--size) solid transparent;
     border-top: var(--size) solid var(--accent-color);
