@@ -4,8 +4,9 @@
 
 <script>
   import Counter from '$lib/Counter.svelte';
-  import Notes from '$lib/NoteLines.svelte';
+  import NoteLines from '$lib/NoteLines.svelte';
   import NoteInput from '$lib/NoteInput.svelte';
+  import MessageBox from '$lib/MessageBox.svelte';
 </script>
 
 <svelte:head>
@@ -13,9 +14,10 @@
 </svelte:head>
 
 <section>
-  <Notes />
+  <MessageBox />
+  <NoteLines />
   <NoteInput />
-  <button>place note</button>
+  <MessageBox message={"yooo"} player/>
 </section>
 
 <style>
