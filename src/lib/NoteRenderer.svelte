@@ -1,12 +1,14 @@
 <script>
   import { spring } from 'svelte/motion';
   import Note from '$lib/Note.svelte';
+  export let notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
 </script>
 
 <picture>
   <source srcset="/assets/clef-white.png" type="image/png" />
   <img src="/assets/clef-white.png" alt="Welcome" />
 </picture>
+{`scale: ${notes}`}
 <div class="container">
   <div class="lines">
     <div class="note-line" />
@@ -16,9 +18,9 @@
     <div class="note-line" />
   </div>
   <div class="entered-notes">
-    <Note active />
-    <Note sharp />
-    <Note flat />
+    <Note active position="5" />
+    <Note sharp position="2" />
+    <Note flat position="0" />
   </div>
 </div>
 
@@ -43,7 +45,7 @@
   }
   .note-line {
     width: 70vw;
-    height: 2px;
+    height: 3px;
     background-color: white;
     margin-bottom: 1.1rem;
   }
