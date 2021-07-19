@@ -4,14 +4,9 @@
 </script>
 
 <header>
-  <div class="corner">
-    <a href="https://kit.svelte.dev">
-      <img src={logo} alt="SvelteKit" />
-    </a>
-  </div>
+  <div class="corner">hamburger menu?</div>
 
   <nav>
-    
     <ul>
       <li class:active={$page.path === '/'}>
         <a sveltekit:prefetch href="/">Home</a>
@@ -23,7 +18,6 @@
         <a sveltekit:prefetch href="/about">About</a>
       </li>
     </ul>
-    
   </nav>
 
   <div class="corner">
@@ -38,6 +32,7 @@
   }
 
   .corner {
+    padding: 1rem;
     width: 3em;
     height: 3em;
   }
