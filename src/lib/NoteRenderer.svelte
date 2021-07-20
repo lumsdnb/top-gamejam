@@ -13,6 +13,9 @@
       </picture>
     </div>
     <div class="note1">
+      {#if }
+        
+      {/if}
       <Note active />
     </div>
     <div class="note2">
@@ -81,10 +84,7 @@
     right: 4rem;
   }
   img[src*='clef-white.png'] {
-    width: 7rem;
-    position: relative;
-    top: 7.5rem;
-    right: 14rem;
+    width: 12rem;
     filter: drop-shadow(6px 6px 5px black);
   }
   .line-group {
@@ -108,6 +108,7 @@
     grid-template-rows: repeat(1fr 12);
     gap: 0px 0px;
     grid-auto-flow: row;
+    place-items: center;
   }
 
   .note1 {

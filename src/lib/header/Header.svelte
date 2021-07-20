@@ -35,6 +35,7 @@
     padding: 1rem;
     width: 3em;
     height: 3em;
+    color: white;
   }
 
   .corner a {

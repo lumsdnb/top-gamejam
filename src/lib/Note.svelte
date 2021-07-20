@@ -2,6 +2,7 @@
   export let sharp = false;
   export let flat = false;
   export let active = false;
+  export let position = '0';
 </script>
 
 <div class="note">
@@ -19,16 +20,13 @@
 </div>
 
 <style>
-  .entered-notes > span {
-    display: inline-block;
-    font-size: 1.4rem;
-    filter: drop-shadow(6px 6px 5px black);
-  }
   .note {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     color: white;
+    filter: drop-shadow(6px 6px 5px black);
+    font-size: 1.5rem;
   }
   .active-note {
     color: gold;
