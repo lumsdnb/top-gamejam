@@ -13,9 +13,6 @@
       </picture>
     </div>
     <div class="note1">
-      {#if }
-        
-      {/if}
       <Note active />
     </div>
     <div class="note2">
