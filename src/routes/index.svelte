@@ -3,7 +3,6 @@
 </script>
 
 <script>
-  import Counter from '$lib/Counter.svelte';
   import NoteRenderer from '$lib/NoteRenderer.svelte';
   import NoteInput from '$lib/NoteInput.svelte';
   import MessageBox from '$lib/MessageBox.svelte';
