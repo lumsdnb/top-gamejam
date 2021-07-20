@@ -1,7 +1,8 @@
 <script>
   import { spring } from 'svelte/motion';
   import Note from '$lib/Note.svelte';
-  export let notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
+  export let scale = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
+  let enteredNotes = ['c', 'e', 'g'];
 </script>
 
 <div class="container">
@@ -13,40 +14,64 @@
       </picture>
     </div>
     <div class="note1">
-      <Note active />
+      {#if enteredNotes.includes(scale[0])}
+        <Note active />
+      {/if}
     </div>
     <div class="note2">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[1])}
+        <Note />
+      {/if}
     </div>
     <div class="note3">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[2])}
+        <Note />
+      {/if}
     </div>
     <div class="note4">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[3])}
+        <Note active />
+      {/if}
     </div>
     <div class="note5">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[4])}
+        <Note active />
+      {/if}
     </div>
     <div class="note6">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[5])}
+        <Note active />
+      {/if}
     </div>
     <div class="note7">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[6])}
+        <Note active />
+      {/if}
     </div>
     <div class="note8">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[7])}
+        <Note active />
+      {/if}
     </div>
     <div class="note9">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[8])}
+        <Note active />
+      {/if}
     </div>
     <div class="note10">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[9])}
+        <Note />
+      {/if}
     </div>
     <div class="note11">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[10])}
+        <Note sharp />
+      {/if}
     </div>
     <div class="note12">
-      <Note sharp />
+      {#if enteredNotes.includes(scale[11])}
+        <Note active />
+      {/if}
     </div>
     <div class="line1-none" />
     <div class="line2-none" />
@@ -74,21 +99,9 @@
 </div>
 
 <style>
-  .entered-notes {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    right: 4rem;
-  }
   img[src*='clef-white.png'] {
     width: 12rem;
     filter: drop-shadow(6px 6px 5px black);
-  }
-  .line-group {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50% -30%);
   }
 
   .note-line {
@@ -100,6 +113,8 @@
   /* -------- grid stuff -------- */
 
   .notes {
+    position: relative;
+    top: 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(1fr 12);
