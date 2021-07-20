@@ -5,14 +5,14 @@
 - checks if sharps and flats are correct
 - [x] for testing, hardcode c major scale first, easiest to get basic logic working
 - put all input elements in form tag? best for accesibility and web standards i guess
-- set up main game component that contains note grid, ui panels
+- [x] set up main game component that contains note grid, ui panels
 - impl gold count in main game component state
-- note line renderer
-  - entered notes
-  - notes as separate components
-    - note colors
-    - active notes
-    - flats & sharps
+- [x] note line renderer
+  - [x] entered notes
+  - [x] notes as separate components
+    - [x] note colors
+    - [x] active notes
+    - [x] flats & sharps
   - correct answer (light up notes in red or green
   - change existing notes
 
