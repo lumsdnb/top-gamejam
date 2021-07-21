@@ -28,7 +28,7 @@
 </section>
 
 <style>
-  section {
+  /* section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,5 +45,5 @@
     width: 100%;
     left: 50%;
     transform: translateX(-45%);
-  }
+  } */
 </style>
