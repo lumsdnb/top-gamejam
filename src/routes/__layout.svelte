@@ -10,7 +10,7 @@
 </main>
 
 <style>
-  main {
+  /* main {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -19,5 +19,13 @@
     max-width: 1024px;
     margin: 0 auto;
     box-sizing: border-box;
+    background-color: ;
+  } */
+  @media (min-width: 320px) {
+    main{
+      width: 95%;
+      margin: 0 auto;
+      background-color: bisque;
+    }
   }
 </style>

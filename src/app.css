@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 :root {
-  font-family: 'Press Start 2P', cursive;
-  --font-mono: 'Fira Mono', monospace;
+  font-family: "Press Start 2P", cursive;
+  --font-mono: "Fira Mono", monospace;
   --pure-white: #ffffff;
   --primary-color: #b9c6d2;
   --secondary-color: #d0dde9;
@@ -25,12 +27,13 @@
 
 body {
   min-height: 100vh;
-  margin: 0;
+  /* overflow: hidden; */
   background-color: var(--primary-color);
   background: url(/static/forest-of-letters/bg-forest.png);
   background-repeat: no-repeat;
   background-size: cover;
   scrollbar-width: thin;
+  background-attachment: fixed;
 }
 
 #svelte {
