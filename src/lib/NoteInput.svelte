@@ -6,20 +6,20 @@
   let noteType = ['normal', 'sharp', 'flat'];
 </script>
 
-<div class="container">
-  <div class="horizontal">
+<div id="container">
+  <div id="span-1-col">
     <InputPanel type="column-panel" values={scaleValues} />
   </div>
-  <div class="vertical">
+  <div id="span-2-col">
     <InputPanel values={notePos} />
     <InputPanel values={noteType} />
   </div>
-  <div class="submitarea">
+  <div id="submit-container">
     <button class="submit-note shade">place note</button>
   </div>
 </div>
 
-<style>
+<!-- <style>
   .submit-note {
     color: var(--accent-color2);
     user-select: none;
@@ -74,5 +74,37 @@
     grid-area: submitarea;
     place-items: center;
     text-align: center;
+  }
+</style> -->
+<style>
+  @media (min-width: 320px) {
+  #container{
+    margin: 0 auto;
+    /* background-color: thistle; */
+  display: grid;
+  grid-template-areas: 
+  "span-1-col span-2-col span-2-col "
+  "span-1-col span-2-col span-2-col "
+  "span-1-col submit  submit";
+  justify-items: center;
+  align-items: center;
+  }
+
+  #span-1-col{
+    grid-area: span-1-col;
+  }
+  #span-2-col{
+    grid-area: span-2-col;
+  }
+  #submit-container{
+    grid-area: submit;
+    /* place-items: center; */
+  }
+  .submit-note{
+    color: var(--accent-color2);
+    border: none;
+    background-color: transparent;
+    user-select: none;
+  }
   }
 </style>
