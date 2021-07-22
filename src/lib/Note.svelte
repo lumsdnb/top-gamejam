@@ -20,13 +20,15 @@
 </div>
 
 <style>
-  .note {
+  @media (min-width: 320px) {
+ .note {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     color: white;
     filter: drop-shadow(6px 6px 5px black);
-    font-size: 1.5rem;
+    font-size: .8rem;
   }
   .active-note {
     color: gold;
@@ -34,4 +36,5 @@
   .inactive-note {
     color: white;
   }
+}
 </style>
