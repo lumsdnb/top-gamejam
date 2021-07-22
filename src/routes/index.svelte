@@ -6,7 +6,6 @@
   import NoteRenderer from '$lib/NoteRenderer.svelte';
   import NoteInput from '$lib/NoteInput.svelte';
   import MessageBox from '$lib/MessageBox.svelte';
-
   //this will be loaded from main json file later
   const scale = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
 </script>
@@ -14,20 +13,19 @@
 <svelte:head>
   <title>Home</title>
 </svelte:head>
-
+<MessageBox />
 <section>
-  <MessageBox />
   <NoteRenderer {scale} />
-  <div class="shiftdown">
-    <NoteInput />
-  </div>
-  <!-- those divs pretty hacky and not very precise -->
-  <div class="bottom">
-    <MessageBox message={'yooo'} player />
-  </div>
+  <NoteInput />
 </section>
+<MessageBox message={'yooo'} player />
 
 <style>
+  @media (min-width: 320px) {
+    section{
+      padding: 1.5em .5em ;
+    }
+  }
   /* section {
     display: flex;
     flex-direction: column;

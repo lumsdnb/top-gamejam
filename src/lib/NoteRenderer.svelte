@@ -5,7 +5,7 @@
   let enteredNotes = ['c', 'e', 'g'];
 </script>
 
-<div class="container">
+<!-- <div class="container">
   <div class="notes">
     <div class="clef">
       <picture>
@@ -96,9 +96,21 @@
     </div>
     <div class="line12-none" />
   </div>
+</div> -->
+<div id="container">
+  <div id="clef">
+    <img src="/assets/clef-white.png" alt="chef">
+  </div>
+  <div id="lines">
+    <div class="line l1"></div>
+    <div class="line l2"></div>
+    <div class="line l3"></div>
+    <div class="line l4"></div>
+    <div class="line l5"></div>
+  </div>
 </div>
 
-<style>
+<!-- <style>
   img[src*='clef-white.png'] {
     width: 12rem;
     filter: drop-shadow(6px 6px 5px black);
@@ -221,5 +233,37 @@
 
   .clef {
     grid-area: 2 / 1 / 11 / 2;
+  }
+</style> -->
+<style>
+  @media (min-width: 320px) {
+    #container{
+      background-color: palegreen;
+      border: black 1px solid;
+      display: flex;
+      margin-bottom: 1em;
+    }
+    #clef{
+      /* width: 82px; */
+    }
+    #clef img{
+      width: 82px;
+      object-fit: cover;
+    }
+    #lines{
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: thistle;
+    }
+    .line{
+      height: .2em;
+      width: 100%;
+      background: white;
+      margin-bottom: .8em;
+    }
+ 
   }
 </style>

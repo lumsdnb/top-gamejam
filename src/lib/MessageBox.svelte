@@ -6,7 +6,7 @@
 <!-- Todo: find a better way to set the order of thes -->
 <div class:reorder={!player} class="message-box">
   {#if player}
-    <img src="/static/assets/favicon.png" alt="" />
+    <img id="player-img" src="/static/assets/favicon.png" alt="" />
     <p>{message}</p>
     {:else}
     <!-- changed some logic here -->
@@ -21,6 +21,7 @@
 </div>
 
 <style>
+  /* add media query */
   .message-box {
     color: white;
     width: 100%;
@@ -42,6 +43,11 @@
   img {
     max-width:25%;
     border: 1px solid orangered;
+  }
+  #player-img{
+    background-color: #085E2B;
+    border: 1px solid #E25714;
+
   }
   .box{
     background-color: white;
