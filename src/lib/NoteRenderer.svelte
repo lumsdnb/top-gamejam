@@ -1,329 +1,134 @@
 <script>
   import { spring } from 'svelte/motion';
   import Note from '$lib/Note.svelte';
-  export let scale = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
-  let enteredNotes = ['c', 'e', 'g'];
+  import { gameData } from '../stores.js';
+  let scale = $gameData.currentScale;
+  let enteredNotes = $gameData.enteredNotes;
 </script>
-
- <!-- <div class="container">
-  <div class="notes">
-    <div class="clef">
-      <picture>
-        <source srcset="/assets/clef-white.png" type="image/png" />
-        <img src="/assets/clef-white.png" alt="Welcome" />
-      </picture>
-    </div>
-    <div class="note1">
-      {#if enteredNotes.includes(scale[0])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="note2">
-      {#if enteredNotes.includes(scale[1])}
-        <Note />
-      {/if}
-    </div>
-    <div class="note3">
-      {#if enteredNotes.includes(scale[2])}
-        <Note />
-      {/if}
-    </div>
-    <div class="note4">
-      {#if enteredNotes.includes(scale[3])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="note5">
-      {#if enteredNotes.includes(scale[4])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="note6">
-      {#if enteredNotes.includes(scale[5])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="note7">
-      {#if enteredNotes.includes(scale[6])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="note8">
-      {#if enteredNotes.includes(scale[7])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="note9">
-      {#if enteredNotes.includes(scale[8])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="note10">
-      {#if enteredNotes.includes(scale[9])}
-        <Note />
-      {/if}
-    </div>
-    <div class="note11">
-      {#if enteredNotes.includes(scale[10])}
-        <Note sharp />
-      {/if}
-    </div>
-    <div class="note12">
-      {#if enteredNotes.includes(scale[11])}
-        <Note active />
-      {/if}
-    </div>
-    <div class="line1-none" />
-    <div class="line2-none" />
-    <div class="line3">
-      <div class="note-line" />
-    </div>
-    <div class="line4-none" />
-    <div class="line5">
-      <div class="note-line" />
-    </div>
-    <div class="line6-none" />
-    <div class="line7">
-      <div class="note-line" />
-    </div>
-    <div class="line8-none" />
-    <div class="line9">
-      <div class="note-line" />
-    </div>
-    <div class="line10-none" />
-    <div class="line11">
-      <div class="note-line" />
-    </div>
-    <div class="line12-none" />
-  </div>
-</div>  -->
 
 <div id="container">
   <div id="clef">
-    <img src="/assets/clef-white.png" alt="chef">
+    <img src="/assets/clef-white.png" alt="chef" />
   </div>
   <div id="grid-notes">
     <div id="grid-lines">
-      <div class="block b1"></div>
-      <div class="block b2"></div>
-      <div class="block b3"></div>
-      <div class="block b4"></div>
-      <div class="block b5"></div>
-      <div class="block b6"></div>
-      <div class="block b7"></div>
+      <div class="block b1" />
+      <div class="block b2" />
+      <div class="block b3" />
+      <div class="block b4" />
+      <div class="block b5" />
+      <div class="block b6" />
+      <div class="block b7" />
     </div>
     <!-- the individual notes have to be positioned absolutely -->
     <!-- place note here -->
+    {#each Array(7) as _, i}
+      {#if $gameData.enteredNotes.includes(scale[i])}
+        <div class={`n${i}`}>
+          <Note />
+        </div>
+      {/if}
+    {/each}
   </div>
-</div> 
+</div>
+<p>{`you entered ${$gameData.enteredNotes}`}</p>
 
- <!-- <style>
-  img[src*='clef-white.png'] {
-    width: 12rem;
-    filter: drop-shadow(6px 6px 5px black);
-  }
-
-  .note-line {
-    width: 30vw;
-    height: 3px;
-    background-color: white;
-  }
-
-  /* -------- grid stuff -------- */
-
-  .notes {
-    position: relative;
-    top: 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(1fr 12);
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    place-items: center;
-  }
-
-  .note1 {
-    grid-area: 12 / 2 / 13 / 3;
-  }
-
-  .note2 {
-    grid-area: 11 / 2 / 12 / 3;
-  }
-
-  .note3 {
-    grid-area: 10 / 2 / 11 / 3;
-  }
-
-  .note4 {
-    grid-area: 9 / 2 / 10 / 3;
-  }
-
-  .note5 {
-    grid-area: 8 / 2 / 9 / 3;
-  }
-
-  .note6 {
-    grid-area: 7 / 2 / 8 / 3;
-  }
-
-  .note7 {
-    grid-area: 6 / 2 / 7 / 3;
-  }
-
-  .note8 {
-    grid-area: 5 / 2 / 6 / 3;
-  }
-
-  .note9 {
-    grid-area: 4 / 2 / 5 / 3;
-  }
-
-  .note10 {
-    grid-area: 3 / 2 / 4 / 3;
-  }
-
-  .note11 {
-    grid-area: 2 / 2 / 3 / 3;
-  }
-
-  .note12 {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-
-  .line1-none {
-    grid-area: 12 / 1 / 13 / 4;
-  }
-
-  .line2-none {
-    grid-area: 11 / 1 / 12 / 4;
-  }
-
-  .line3 {
-    grid-area: 10 / 1 / 11 / 4;
-  }
-
-  .line4-none {
-    grid-area: 9 / 1 / 10 / 4;
-  }
-
-  .line5 {
-    grid-area: 8 / 1 / 9 / 4;
-  }
-
-  .line6-none {
-    grid-area: 7 / 1 / 8 / 4;
-  }
-
-  .line7 {
-    grid-area: 6 / 1 / 7 / 4;
-  }
-
-  .line8-none {
-    grid-area: 5 / 1 / 6 / 4;
-  }
-
-  .line9 {
-    grid-area: 4 / 1 / 5 / 4;
-  }
-
-  .line10-none {
-    grid-area: 3 / 1 / 4 / 4;
-  }
-
-  .line11 {
-    grid-area: 2 / 1 / 3 / 4;
-  }
-
-  .line12-none {
-    grid-area: 1 / 1 / 2 / 4;
-  }
-
-  .clef {
-    grid-area: 2 / 1 / 11 / 2;
-  }
-</style>  -->
-
-<!-- 
-  
- -->
-<style> 
-
+<style>
   @media (min-width: 320px) {
-
- 
-    #container{
+    #container {
       background-color: palegreen;
       border: black 1px solid;
       display: flex;
       margin-bottom: 1em;
     }
-    /* #clef{
-    
-    } */
-    #clef img{
+
+    /*basic note placement*/
+    .n0 {
+      grid-area: d7;
+    }
+    .n1 {
+      grid-area: d6;
+    }
+    .n2 {
+      grid-area: d5;
+    }
+    .n3 {
+      grid-area: d4;
+    }
+    .n4 {
+      grid-area: d3;
+    }
+    .n5 {
+      grid-area: d2;
+    }
+    .n6 {
+      grid-area: d1;
+    }
+
+    #clef img {
       width: 82px;
       object-fit: cover;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
     }
-    #grid-notes{
+    #grid-notes {
       width: 100%;
       height: fit-content;
       background-color: thistle;
       display: grid;
-      grid-template-areas: 
-      "a1 b1 c1 d1 e1 f1 g1 h1" 
-      "a2 b2 c2 d2 e2 f2 g2 h2" 
-      "a3 b3 c3 d3 e3 f3 g3 h3" 
-      "a4 b4 c4 d4 e4 f4 g4 h4" 
-      "a5 b5 c5 d5 e5 f5 g5 h5" 
-      "a6 b6 c6 d6 e6 f6 g6 h6" 
-      "a7 b7 c7 d7 e7 f7 g7 h7" 
-      ;
+      grid-template-areas:
+        'a1 b1 c1 d1 e1 f1 g1 h1'
+        'a2 b2 c2 d2 e2 f2 g2 h2'
+        'a3 b3 c3 d3 e3 f3 g3 h3'
+        'a4 b4 c4 d4 e4 f4 g4 h4'
+        'a5 b5 c5 d5 e5 f5 g5 h5'
+        'a6 b6 c6 d6 e6 f6 g6 h6'
+        'a7 b7 c7 d7 e7 f7 g7 h7';
       /*  */
       position: relative;
     }
-   #grid-lines{
-     position: absolute;
-     width: 100%;
-     height: 100%;
-     display:grid;
-     grid-template-areas: 
-     "block1" 
-     "block2"
-     "block3" 
-     "block4"
-     "block5"
-     "block6"
-     "block7"
-     ;
-   }
-   .block{
-     width: 100%;
-     height: 100%;
-     border-bottom: 2px solid black;
-   }
-   .b1{
-     grid-area: block1;
-   }
-   .b2{
-     grid-area: block2;
-   }
-   .b3{
-     grid-area: block3;
-   }
-   .b4{
-     grid-area: block4;
-   }
-   .b5{
-     grid-area: block5;
-   }
-   .b6{
-     grid-area: block6;
-     border-bottom: 2px dotted black;
-   }
-   .b7{
-     grid-area: block7;
-     border-bottom: none;
-   }
- 
+    #grid-lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-areas:
+        'block1'
+        'block2'
+        'block3'
+        'block4'
+        'block5'
+        'block6'
+        'block7';
+    }
+    .block {
+      width: 100%;
+      height: 100%;
+      border-bottom: 2px solid black;
+    }
+    .b1 {
+      grid-area: block1;
+    }
+    .b2 {
+      grid-area: block2;
+    }
+    .b3 {
+      grid-area: block3;
+    }
+    .b4 {
+      grid-area: block4;
+    }
+    .b5 {
+      grid-area: block5;
+    }
+    .b6 {
+      grid-area: block6;
+      border-bottom: 2px dotted black;
+    }
+    .b7 {
+      grid-area: block7;
+      border-bottom: none;
+    }
   }
-</style> 
+</style>
