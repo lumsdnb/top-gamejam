@@ -5,7 +5,7 @@
   let enteredNotes = ['c', 'e', 'g'];
 </script>
 
-<!-- <div class="container">
+ <!-- <div class="container">
   <div class="notes">
     <div class="clef">
       <picture>
@@ -96,21 +96,27 @@
     </div>
     <div class="line12-none" />
   </div>
-</div> -->
+</div>  -->
+
 <div id="container">
   <div id="clef">
     <img src="/assets/clef-white.png" alt="chef">
   </div>
-  <div id="lines">
-    <div class="line l1"></div>
-    <div class="line l2"></div>
-    <div class="line l3"></div>
-    <div class="line l4"></div>
-    <div class="line l5"></div>
+  <div id="grid-notes">
+    <div id="grid-lines">
+      <div class="block b1"></div>
+      <div class="block b2"></div>
+      <div class="block b3"></div>
+      <div class="block b4"></div>
+      <div class="block b5"></div>
+      <div class="block b6"></div>
+      <div class="block b7"></div>
+    </div>
+    <!-- the individual notes have to be positioned absolutely -->
   </div>
-</div>
+</div> 
 
-<!-- <style>
+ <!-- <style>
   img[src*='clef-white.png'] {
     width: 12rem;
     filter: drop-shadow(6px 6px 5px black);
@@ -234,8 +240,13 @@
   .clef {
     grid-area: 2 / 1 / 11 / 2;
   }
-</style> -->
-<style>
+</style>  -->
+
+<!-- 
+  
+ -->
+<style> 
+
   @media (min-width: 320px) {
     #container{
       background-color: palegreen;
@@ -243,27 +254,73 @@
       display: flex;
       margin-bottom: 1em;
     }
-    #clef{
-      /* width: 82px; */
-    }
+    /* #clef{
+    
+    } */
     #clef img{
       width: 82px;
       object-fit: cover;
     }
-    #lines{
+    #grid-notes{
       width: 100%;
       height: fit-content;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       background-color: thistle;
+      display: grid;
+      grid-template-areas: 
+      "1a 1b 1c 1d 1e 1f 1g 1h" 
+      "2a 2b 2c 2d 2e 2f 2g 2h" 
+      "3a 3b 3c 3d 3e 3f 3g 3h" 
+      "4a 4b 4c 4d 4e 4f 4g 4h" 
+      "5a 5b 5c 5d 5e 5f 5g 5h" 
+      "6a 6b 6c 6d 6e 6f 6g 6h" 
+      "7a 7b 7c 7d 7e 7f 7g 7h" 
+      ;
+      /*  */
+      position: relative;
     }
-    .line{
-      height: .2em;
-      width: 100%;
-      background: white;
-      margin-bottom: .8em;
-    }
+   #grid-lines{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     display:grid;
+     grid-template-areas: 
+     "block1" 
+     "block2"
+     "block3" 
+     "block4"
+     "block5"
+     "block6"
+     "block7"
+     ;
+   }
+   .block{
+     width: 100%;
+     height: 100%;
+     border-bottom: 2px solid black;
+   }
+   .b1{
+     grid-area: block1;
+   }
+   .b2{
+     grid-area: block2;
+   }
+   .b3{
+     grid-area: block3;
+   }
+   .b4{
+     grid-area: block4;
+   }
+   .b5{
+     grid-area: block5;
+   }
+   .b6{
+     grid-area: block6;
+     border-bottom: 2px dotted black;
+   }
+   .b7{
+     grid-area: block7;
+     border-bottom: none;
+   }
  
   }
-</style>
+</style> 
