@@ -145,18 +145,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: .5em 0;
+      padding: .8em 0;
       position: relative;
     }
     #h-nav > button{
       position: absolute;
-      left: 0;
+      right: 0;
       padding: .2em;
       display: flex;
       height: 100%;
       width: 10%;
       justify-content: center;
       align-items: center;
+      background-color: transparent;
+      color: white;
     }
     #h-nav > h1{
       /* got this from figma */
@@ -168,6 +170,8 @@
       width: 100%;
       min-height: 100vh;
       background-color: rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
     }
     #modal-inner{
       width: 50%;
@@ -175,6 +179,8 @@
       background-color:#666;
       /* padding: em 0; */
       padding-top: 2em;
+      align-self: flex-end;
+      
     } 
     #modal-inner li{
       margin-bottom: 2em;
