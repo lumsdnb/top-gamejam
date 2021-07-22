@@ -23,7 +23,7 @@
 
 ### story text system
 
-- it needs that retro text scroll effect
+- it needs that retro text scroll effect (seems easy to implement) https://svelte.dev/tutorial/custom-js-transitions
 - character introduction
 - character during note entry
   - up to 3 unique messages per note/ character
