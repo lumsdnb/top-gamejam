@@ -23,9 +23,9 @@
   } */
   @media (min-width: 320px) {
     main{
-      width: 95%;
+      width: 90%;
       margin: 0 auto;
-      background-color: bisque;
+      /* background-color: bisque; */
     }
   }
 </style>

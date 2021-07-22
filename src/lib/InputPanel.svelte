@@ -42,24 +42,29 @@
 {/if}
 
 <style>
+  @media (min-width: 320px) {
   .column-panel {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
   .bigger {
-    font-size: 2rem;
+    font-size: 1.56rem;
+    color: #FD9979;;
   }
 
   .regular {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   .arrow {
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2.5rem;
   }
-  .submit-note {
+  /* .submit-note {
     color: var(--accent-color2);
     user-select: none;
   }
@@ -69,10 +74,10 @@
   }
   .submit-note:active {
     transform: scale(0.97);
-  }
-  .note-selection {
+  } */
+  /* .note-selection {
     font-size: 1.8rem;
-  }
+  } */
   p {
     display: inline-block;
     color: white;
@@ -82,18 +87,18 @@
   }
 
   .left {
-    transform: rotate(180deg);
+    transform: rotateY(180deg);
   }
   .up {
-    transform: rotate(-90deg);
+    transform: rotateZ(90deg)rotateY(180deg);
   }
   .down {
     transform: rotate(90deg);
   }
 
-  .shade {
+  /* .shade {
     filter: drop-shadow(3px 5px 0px black);
-  }
+  } */
 
   button {
     background-color: rgba(0, 0, 0, 0);
@@ -111,5 +116,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  }}
 </style>
