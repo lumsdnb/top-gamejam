@@ -2,6 +2,7 @@
   import arrow from './arrow.svg';
   export let type = 'regular';
   export let values = 'x';
+  export let currentValue;
 
   let i = 0;
   const incrementValue = () => {
@@ -9,12 +10,14 @@
     if (i >= values.length) {
       i = 0;
     }
+    currentValue = i;
   };
   const decrementValue = () => {
     i--;
     if (i < 0) {
       i = values.length - 1;
     }
+    currentValue = i;
   };
 </script>
 
@@ -43,28 +46,28 @@
 
 <style>
   @media (min-width: 320px) {
-  .column-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .bigger {
-    font-size: 1.56rem;
-    color: #FD9979;;
-  }
+    .column-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .bigger {
+      font-size: 1.56rem;
+      color: #fd9979;
+    }
 
-  .regular {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .arrow {
-    width: 2rem;
-    height: 2.5rem;
-  }
-  /* .submit-note {
+    .regular {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .arrow {
+      width: 2rem;
+      height: 2.5rem;
+    }
+    /* .submit-note {
     color: var(--accent-color2);
     user-select: none;
   }
@@ -75,46 +78,47 @@
   .submit-note:active {
     transform: scale(0.97);
   } */
-  /* .note-selection {
+    /* .note-selection {
     font-size: 1.8rem;
   } */
-  p {
-    display: inline-block;
-    color: white;
-    user-select: none;
-    width: 6rem;
-    text-align: center;
-  }
+    p {
+      display: inline-block;
+      color: white;
+      user-select: none;
+      width: 6rem;
+      text-align: center;
+    }
 
-  .left {
-    transform: rotateY(180deg);
-  }
-  .up {
-    transform: rotateZ(90deg)rotateY(180deg);
-  }
-  .down {
-    transform: rotate(90deg);
-  }
+    .left {
+      transform: rotateY(180deg);
+    }
+    .up {
+      transform: rotateZ(90deg) rotateY(180deg);
+    }
+    .down {
+      transform: rotate(90deg);
+    }
 
-  /* .shade {
+    /* .shade {
     filter: drop-shadow(3px 5px 0px black);
   } */
 
-  button {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-  }
-  button:hover {
-    transform: scale(1.04);
-  }
-  button:active {
-    transform: scale(0.95);
-  }
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+    }
+    button:hover {
+      transform: scale(1.04);
+    }
+    button:active {
+      transform: scale(0.95);
+    }
 
-  .note-selection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }}
+    .note-selection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 </style>

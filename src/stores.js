@@ -4,6 +4,11 @@ export const gameData = writable({
   name: 'bob',
   gold: 420,
   currentScale: ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
-  enteredNotes: ['c', 'e', 'g'],
+  enteredNotes: [],
   activeNote: 'c',
+});
+export const userInterface = writable({
+  selectedNote: 'c',
+  notePosition: 0,
+  noteType: 'normal',
 });

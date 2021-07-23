@@ -59,6 +59,10 @@
     }
     return true;
   }
+
+  const handleBtn = () => {
+    console.log('outer fn');
+  };
 </script>
 
 <svelte:head>
@@ -67,7 +71,7 @@
 <MessageBox message={characterMessage} />
 <section>
   <NoteRenderer {scale} />
-  <NoteInput />
+  <NoteInput on:click={handleBtn} />
 </section>
 <MessageBox message={'yooo'} player />
 <p>buttons for testing</p>
