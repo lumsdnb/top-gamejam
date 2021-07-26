@@ -45,7 +45,88 @@
 {/if}
 
 <style>
-  @media (min-width: 320px) {
+  @media (min-width: 750px) {
+    .column-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      top: 6em;
+      position: absolute;
+    }
+    .bigger {
+      font-size: 1.56rem;
+      color: #fd9979;
+    }
+
+    .regular {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      left: 5em;
+      top: 17em;
+    }
+    .arrow {
+      width: 2rem;
+      height: 2.5rem;
+    }
+    /* .submit-note {
+    color: var(--accent-color2);
+    user-select: none;
+  }
+
+  .submit-note:hover {
+    transform: scale(1.05);
+  }
+  .submit-note:active {
+    transform: scale(0.97);
+  } */
+    /* .note-selection {
+    font-size: 1.8rem;
+  } */
+    p {
+      display: inline-block;
+      color: white;
+      user-select: none;
+      width: 6rem;
+      text-align: center;
+    }
+
+    .left {
+      transform: rotateY(180deg);
+    }
+    .up {
+      transform: rotateZ(90deg) rotateY(180deg);
+    }
+    .down {
+      transform: rotate(90deg);
+    }
+
+    /* .shade {
+    filter: drop-shadow(3px 5px 0px black);
+  } */
+
+    button {
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+    }
+    button:hover {
+      transform: scale(1.04);
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+
+    .note-selection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 749px) {
     .column-panel {
       display: flex;
       flex-direction: column;

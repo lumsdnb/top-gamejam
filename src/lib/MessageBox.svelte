@@ -23,20 +23,39 @@
 
 <style>
   /* add media query */
-  .message-box {
-    color: white;
-    width: 100%;
-    /* height: 5rem; */
-    background-color: var(--bg2);
-    border: 1px white solid;
-    padding: 0.2em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    /* display: grid;
+  @media (min-width: 750px) {
+    .message-box {
+      color: white;
+      width: 60%;
+      max-width: 520px;
+      background-color: var(--bg2);
+      border: 1px white solid;
+      padding: 0.2em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      left: 20em;
+      position: relative;
+    }
+  }
+  /*Mobile @media*/
+  @media (min-width: 320px) and (max-width: 749px) {
+    .message-box {
+      color: white;
+      width: 100%;
+      /* height: 5rem; */
+      background-color: var(--bg2);
+      border: 1px white solid;
+      padding: 0.2em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      /* display: grid;
     grid-template-columns: ; */
+    }
   }
   .message-box > p {
     padding: 0 1rem;

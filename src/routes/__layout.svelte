@@ -21,11 +21,20 @@
     box-sizing: border-box;
     background-color: ;
   } */
-  @media (min-width: 320px) {
-    main{
+  @media (min-width: 320px) and (max-width: 749px) {
+    main {
       width: 90%;
       margin: 0 auto;
-      /* background-color: bisque; */
+      /*background-color: bisque;*/
+    }
+  }
+  @media (min-width: 750px) {
+    main {
+      width: 90%;
+      margin: 0 auto;
+      top: 2em;
+      position: absolute;
+      /*background-color: bisque;*/
     }
   }
 </style>

@@ -68,7 +68,6 @@
   }
 </script>
 
-<p>{`note: ${selectedNoteUI}, note # ${noteNumberUI}, type: ${noteTypeUI}`}</p>
 <div id="container">
   <div id="span-1-col">
     <InputPanel
@@ -78,8 +77,9 @@
     />
   </div>
   <div id="span-2-col">
-    <button on:click={removeEnteredNote}>delet last note </button>
+    <!--<button on:click={removeEnteredNote}>delet last note </button>-->
     <InputPanel values={noteType} bind:currentValue={noteTypeUI} />
+    <InputPanel values={notePos} bind:currentValue={noteNumberUI} />
   </div>
   <div id="submit-container">
     <button
@@ -88,8 +88,8 @@
     >
   </div>
 </div>
-<InputPanel values={notePos} bind:currentValue={noteNumberUI} />
-<button on:click={checkAnswer}>check answer</button>
+
+<!--<button on:click={checkAnswer}>check answer</button>-->
 
 <!-- <style>
   .submit-note {
