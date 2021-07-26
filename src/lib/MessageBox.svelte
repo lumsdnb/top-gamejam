@@ -1,16 +1,22 @@
 <script>
   import { set_data } from 'svelte/internal';
+  import { gameData } from '../stores.js';
   export let message = 'i am sad...';
   export let player = false;
 </script>
 
 <!-- Todo: find a better way to set the order of thes -->
-<div class:reorder={!player} class="message-box">
+<div class="message-box">
   {#if player}
     <img id="player-img" src="/static/assets/favicon.png" alt="" />
-    <p>{message}</p>
+    {#if $gameData.enteredNotes.length >= 3}
+      <button class="check-btn" on:click>present chord</button>
+    {/if}
+    {#if $gameData.enteredNotes.length < 3}
+      <p>{message}</p>
+    {/if}
   {:else}
-    <!-- changed some logic here -->
+    <!-- opponent box -->
     <p>{message}</p>
     <img src="/static/forest-of-letters/c-happy.png" alt="" />
   {/if}
@@ -48,6 +54,23 @@
   #player-img {
     background-color: #085e2b;
     border: 1px solid #e25714;
+  }
+  .check-btn {
+    background-color: var(--accent-color2);
+    color: var(--bg2);
+    font-size: 2rem;
+    width: 100%;
+    align-self: stretch;
+    border: none;
+    transition: all 40ms ease-in-out;
+  }
+  .check-btn:hover {
+    background-color: var(--accent-color1);
+    color: var(--accent-color2);
+    font-size: 2.2rem;
+  }
+  .check-btn:active {
+    font-size: 1.9rem;
   }
   .box {
     background-color: white;
