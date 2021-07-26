@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 :root {
   font-family: 'Press Start 2P', cursive;
   --font-mono: 'Fira Mono', monospace;
@@ -8,20 +13,55 @@
   --secondary-color: #d0dde9;
   --tertiary-color: #edf0f8;
   --accent-color: #ff3e00;
+  --accent-color2: #fec837;
+  --bg1: #525162;
+  --bg2: #394f57;
+  --bg3: #446668;
+  --bg4: #749593;
   --heading-color: rgb(255, 255, 255);
   --text-color: #eeeeee;
   --background-without-opacity: rgba(255, 255, 255, 0.7);
   --column-width: 42rem;
   --column-margin-top: 4rem;
 }
+img {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
 
 body {
   min-height: 100vh;
-  margin: 0;
+  /* overflow: hidden; 
   background-color: var(--primary-color);
-  background: url(/static/bg-forest.png);
+  background: url(/static/forest-of-letters/bg-forest.png);
   background-repeat: no-repeat;
   background-size: cover;
+  scrollbar-width: thin;
+  background-attachment: fixed;*/
+}
+
+@media (min-width: 320px) and (max-width: 749px) {
+  body {
+    background-color: var(--primary-color);
+    background: url(/static/forest-of-letters/bg-forest.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    scrollbar-width: thin;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 750px) {
+  body {
+    /*Need to upload on the next commit*/
+    background-color: var(--primary-color);
+    background: url(/static/forest-of-letters/bg-forest-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    scrollbar-width: thin;
+    background-attachment: fixed;
+  }
 }
 
 #svelte {

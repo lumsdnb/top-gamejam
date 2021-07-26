@@ -3,46 +3,30 @@
 </script>
 
 <script>
-  import Counter from '$lib/Counter.svelte';
-  import Notes from '$lib/NoteLines.svelte';
+  import NoteRenderer from '$lib/NoteRenderer.svelte';
   import NoteInput from '$lib/NoteInput.svelte';
+  import MessageBox from '$lib/MessageBox.svelte';
+  import { gameData } from '../stores.js';
+
+  let characterMessage = 'please help me figure this out...';
+  //this will be loaded from main json file later
+  const scale = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
 </script>
 
 <svelte:head>
   <title>Home</title>
 </svelte:head>
-
+<MessageBox message={characterMessage} />
 <section>
-  <Notes />
-  <NoteInput />
-  <button>place note</button>
+  <NoteRenderer {scale} />
+  <NoteInput bind:characterMessage />
 </section>
+<MessageBox message={'yooo'} player />
 
 <style>
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-  }
-
-  h1 {
-    width: 100%;
-  }
-
-  .welcome {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding: 0 0 calc(100% * 495 / 2048) 0;
-  }
-
-  .welcome img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: block;
+  @media (min-width: 320px) {
+    section {
+      padding: 1.5em 0.5em;
+    }
   }
 </style>
