@@ -32,40 +32,6 @@
     $gameData.enteredNotes.splice(-1, 1);
     $gameData.enteredNotes = $gameData.enteredNotes;
   };
-  const checkAnswer = () => {
-    console.log('checking answer...');
-    const majorChord = [
-      $gameData.currentScale[0],
-      $gameData.currentScale[2],
-      $gameData.currentScale[4],
-    ];
-    console.log('chord needed: ' + majorChord);
-    console.log('your chord: ' + $gameData.enteredNotes);
-    if (arrayCompare(majorChord, $gameData.enteredNotes)) {
-      characterMessage = 'you got it!';
-    } else characterMessage = "no, that's not quite right..";
-  };
-
-  function arrayCompare(_arr1, _arr2) {
-    if (
-      !Array.isArray(_arr1) ||
-      !Array.isArray(_arr2) ||
-      _arr1.length !== _arr2.length
-    ) {
-      return false;
-    }
-
-    // .concat() to not mutate arguments
-    const arr1 = _arr1.concat().sort();
-    const arr2 = _arr2.concat().sort();
-
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
 </script>
 
 <p>{`note: ${selectedNoteUI}, note # ${noteNumberUI}, type: ${noteTypeUI}`}</p>
@@ -78,7 +44,10 @@
     />
   </div>
   <div id="span-2-col">
-    <button on:click={removeEnteredNote}>delet last note </button>
+    <!-- <InputPanel values={notePos} bind:currentValue={noteNumberUI} /> -->
+    <button class="delete" on:click={removeEnteredNote}
+      >delete last note
+    </button>
     <InputPanel values={noteType} bind:currentValue={noteTypeUI} />
   </div>
   <div id="submit-container">
@@ -88,8 +57,6 @@
     >
   </div>
 </div>
-<InputPanel values={notePos} bind:currentValue={noteNumberUI} />
-<button on:click={checkAnswer}>check answer</button>
 
 <!-- <style>
   .submit-note {
@@ -177,6 +144,15 @@
       border: none;
       background-color: transparent;
       user-select: none;
+    }
+    .delete {
+      padding: 1rem;
+      color: var(--accent-color2);
+      background-color: transparent;
+      border: none;
+    }
+    .delete:hover {
+      transform: scale(1.05);
     }
   }
 </style>

@@ -36,8 +36,8 @@
 <style>
   @media (min-width: 320px) {
     #container {
-      background-color: palegreen;
-      border: black 1px solid;
+      background-color: transparent;
+      border: none;
       display: flex;
       margin-bottom: 1em;
     }
@@ -75,7 +75,7 @@
     #grid-notes {
       width: 100%;
       height: fit-content;
-      background-color: thistle;
+      background-color: transparent;
       display: grid;
       grid-template-areas:
         'a1 b1 c1 d1 e1 f1 g1 h1'
@@ -105,7 +105,7 @@
     .block {
       width: 100%;
       height: 100%;
-      border-bottom: 2px solid black;
+      border-bottom: 3px solid white;
     }
     .b1 {
       grid-area: block1;
@@ -124,7 +124,7 @@
     }
     .b6 {
       grid-area: block6;
-      border-bottom: 2px dotted black;
+      border-bottom: 3px dotted white;
     }
     .b7 {
       grid-area: block7;

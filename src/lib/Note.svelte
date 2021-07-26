@@ -2,7 +2,6 @@
   export let sharp = false;
   export let flat = false;
   export let active = false;
-  export let position = '0';
 </script>
 
 <div class="note">
