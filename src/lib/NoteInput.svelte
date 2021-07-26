@@ -8,11 +8,64 @@
   let selectedNoteUI = 0;
   let noteNumberUI = 0;
   let noteTypeUI = 0;
+  export let characterMessage;
   const handlePlaceNote = () => {
     console.log('called');
     $gameData.enteredNotes.push($gameData.currentScale[selectedNoteUI]);
     console.log($gameData.enteredNotes);
+    console.log($gameData.enteredNotes.length);
+    if ($gameData.enteredNotes.length == 1) {
+      noteNumberUI = 1;
+    }
+    console.log(noteNumberUI);
   };
+  const addEnteredNote = (note) => {
+    console.log('note has been entered');
+    if ($gameData.enteredNotes.includes(note) === false) {
+      $gameData.enteredNotes.push(note);
+    }
+    console.log($gameData.enteredNotes);
+    $gameData.enteredNotes = $gameData.enteredNotes;
+  };
+  const removeEnteredNote = (note) => {
+    console.log('removing note');
+    $gameData.enteredNotes.splice(-1, 1);
+    $gameData.enteredNotes = $gameData.enteredNotes;
+  };
+  const checkAnswer = () => {
+    console.log('checking answer...');
+    const majorChord = [
+      $gameData.currentScale[0],
+      $gameData.currentScale[2],
+      $gameData.currentScale[4],
+    ];
+    console.log('chord needed: ' + majorChord);
+    console.log('your chord: ' + $gameData.enteredNotes);
+    if (arrayCompare(majorChord, $gameData.enteredNotes)) {
+      characterMessage = 'you got it!';
+    } else characterMessage = "no, that's not quite right..";
+  };
+
+  function arrayCompare(_arr1, _arr2) {
+    if (
+      !Array.isArray(_arr1) ||
+      !Array.isArray(_arr2) ||
+      _arr1.length !== _arr2.length
+    ) {
+      return false;
+    }
+
+    // .concat() to not mutate arguments
+    const arr1 = _arr1.concat().sort();
+    const arr2 = _arr2.concat().sort();
+
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
 </script>
 
 <p>{`note: ${selectedNoteUI}, note # ${noteNumberUI}, type: ${noteTypeUI}`}</p>
@@ -25,13 +78,18 @@
     />
   </div>
   <div id="span-2-col">
-    <InputPanel values={notePos} bind:currentValue={noteNumberUI} />
+    <button on:click={removeEnteredNote}>delet last note </button>
     <InputPanel values={noteType} bind:currentValue={noteTypeUI} />
   </div>
   <div id="submit-container">
-    <button on:click class="submit-note shade">place note</button>
+    <button
+      on:click={addEnteredNote(scaleValues[selectedNoteUI])}
+      class="submit-note shade">place note</button
+    >
   </div>
 </div>
+<InputPanel values={notePos} bind:currentValue={noteNumberUI} />
+<button on:click={checkAnswer}>check answer</button>
 
 <!-- <style>
   .submit-note {
