@@ -39,7 +39,7 @@
     console.log('chord needed: ' + majorChord);
     console.log('your chord: ' + $gameData.enteredNotes);
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
-      characterMessage = 'you got it!';
+      characterMessage = 'thank you.. <3';
       characterMood = 'happy';
     } else characterMessage = "no, that's not quite right..";
   };
@@ -69,7 +69,7 @@
 <svelte:head>
   <title>Home</title>
 </svelte:head>
-{$gameData.tutorialState}
+<!-- {$gameData.tutorialState} -->
 <!-- intro screen -->
 {#if $gameData.tutorialState == 0}
   <section class="welcome">
@@ -110,7 +110,7 @@
       justify-content: space-around;
     }
     .welcome > button {
-      padding: 5rem;
+      margin: 5rem;
       font-size: 2rem;
       background-color: transparent;
       border: none;

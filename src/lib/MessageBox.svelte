@@ -29,7 +29,7 @@
         <p>{message}</p>
       </Typewriter>
     {/if}
-    {#if $gameData.canProgress}
+    {#if $gameData.canProgress && $gameData.enteredNotes.length < 3}
       <button on:click={nextMessage}>></button>
     {/if}
   {:else}

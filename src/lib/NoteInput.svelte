@@ -33,7 +33,7 @@
   };
 </script>
 
-<p>{`note: ${selectedNoteUI}, note # ${noteNumberUI}, type: ${noteTypeUI}`}</p>
+<!-- <p>{`note: ${selectedNoteUI}, note # ${noteNumberUI}, type: ${noteTypeUI}`}</p> -->
 <div id="container">
   <div id="span-1-col">
     <InputPanel
