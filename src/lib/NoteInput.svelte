@@ -8,7 +8,6 @@
   let selectedNoteUI = 0;
   let noteNumberUI = 0;
   let noteTypeUI = 0;
-  export let characterMessage;
   const handlePlaceNote = () => {
     console.log('called');
     $gameData.enteredNotes.push($gameData.currentScale[selectedNoteUI]);

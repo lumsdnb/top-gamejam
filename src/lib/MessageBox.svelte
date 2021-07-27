@@ -1,8 +1,14 @@
 <script>
   import { set_data } from 'svelte/internal';
   import { gameData } from '../stores.js';
+  import Typewriter from 'svelte-typewriter';
   export let message = 'i am sad...';
   export let player = false;
+  export let mood = 'sad';
+  const nextMessage = () => {
+    $gameData.tutorialState += 1;
+    $gameData.canProgress = false;
+  };
 </script>
 
 <!-- Todo: find a better way to set the order of thes -->
@@ -13,12 +19,31 @@
       <button class="check-btn" on:click>present chord</button>
     {/if}
     {#if $gameData.enteredNotes.length < 3}
-      <p>{message}</p>
+      <Typewriter
+        interval={80}
+        cursor={false}
+        on:done={() => {
+          if ($gameData.tutorialState != 0) $gameData.canProgress = true;
+        }}
+      >
+        <p>{message}</p>
+      </Typewriter>
+    {/if}
+    {#if $gameData.canProgress}
+      <button on:click={nextMessage}>></button>
     {/if}
   {:else}
-    <!-- opponent box -->
-    <p>{message}</p>
-    <img src="/static/forest-of-letters/c-happy.png" alt="" />
+    <!-- character box -->
+    <Typewriter
+      interval={110}
+      cursor={false}
+      on:done={() => {
+        if ($gameData.tutorialState != 0) $gameData.canProgress = true;
+      }}
+    >
+      <p>{message}</p>
+    </Typewriter>
+    <img src={`/static/forest-of-letters/c-${mood}.png`} alt="" />
   {/if}
   <!-- boxes on the corners -->
   <div class="box b1" />

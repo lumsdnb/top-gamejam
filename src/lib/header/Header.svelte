@@ -1,43 +1,52 @@
 <script>
   import { page } from '$app/stores';
   import logo from '/static/assets/favicon.png';
-  let hamburger = true
-  let modal = false
+  let hamburger = true;
+  let modal = false;
 </script>
 
 {#if hamburger}
-   <nav id="h-nav">
-      <button on:click={()=>{ modal = true}}><span>X</span></button>
-      <h1>bard.io</h1>
-   </nav>
-{:else}
-   <!-- else content here -->
-   <header>
-  <div class="corner">hamburger menu?</div>
-
-  <nav>
-    <ul>
-      <li class:active={$page.path === '/'}>
-        <a sveltekit:prefetch href="/">Home</a>
-      </li>
-      <li class:active={$page.path === '/levels'}>
-        <a sveltekit:prefetch href="/levels">Levels</a>
-      </li>
-      <li class:active={$page.path === '/about'}>
-        <a sveltekit:prefetch href="/about">About</a>
-      </li>
-    </ul>
+  <nav id="h-nav">
+    <button
+      on:click={() => {
+        modal = true;
+      }}><span>X</span></button
+    >
+    <h1>bard.io</h1>
   </nav>
+{:else}
+  <!-- else content here -->
+  <header>
+    <div class="corner">hamburger menu?</div>
 
-  <div class="corner">
-    <!-- TODO put something else here? github link? -->
-  </div>
-</header>
+    <nav>
+      <ul>
+        <li class:active={$page.path === '/'}>
+          <a sveltekit:prefetch href="/">Home</a>
+        </li>
+        <li class:active={$page.path === '/levels'}>
+          <a sveltekit:prefetch href="/levels">Levels</a>
+        </li>
+        <li class:active={$page.path === '/about'}>
+          <a sveltekit:prefetch href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="corner">
+      <!-- TODO put something else here? github link? -->
+    </div>
+  </header>
 {/if}
- {#if modal}
-    <!-- content here -->
-    <div id="modal" on:click={()=>{modal=false}}>
-      <ul id="modal-inner">
+{#if modal}
+  <!-- content here -->
+  <div
+    id="modal"
+    on:click={() => {
+      modal = false;
+    }}
+  >
+    <ul id="modal-inner">
       <li class:active={$page.path === '/'}>
         <a sveltekit:prefetch href="/">Home</a>
       </li>
@@ -48,110 +57,25 @@
         <a sveltekit:prefetch href="/about">About</a>
       </li>
     </ul>
-    </div>
- {/if}
-<!-- 
-<style>
-  header {
-    display: flex;
-    justify-content: space-between;
-  }
+  </div>
+{/if}
 
-  .corner {
-    padding: 1rem;
-    width: 3em;
-    height: 3em;
-    color: white;
-  }
-
-  .corner a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .corner img {
-    width: 2em;
-    height: 2em;
-    object-fit: contain;
-  }
-
-  nav {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    --background: #394f57;
-  }
-
-  path {
-    fill: var(--background);
-  }
-
-  ul {
-    position: relative;
-    padding: 1rem;
-    margin: 0;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    background: var(--background);
-    background-size: contain;
-  }
-
-  li {
-    position: relative;
-    height: 100%;
-  }
-
-  li.active::before {
-    --size: 6px;
-    content: '';
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: -1rem;
-    left: calc(50% - var(--size));
-    border: var(--size) solid transparent;
-    border-top: var(--size) solid var(--accent-color);
-  }
-
-  nav a {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    padding: 0 1em;
-    color: var(--heading-color);
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 10%;
-    text-decoration: none;
-    transition: color 0.2s linear;
-  }
-
-  a:hover {
-    color: var(--accent-color);
-  }
-</style> -->
 <style>
   @media (min-width: 320px) {
-    #h-nav{
+    #h-nav {
       /* background-color: aquamarine; */
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: .8em 0;
+      padding: 0.8em 0;
       position: relative;
+      height: 7vh;
     }
-    #h-nav > button{
+    #h-nav > button {
       position: absolute;
       right: 0;
-      padding: .2em;
+      padding: 0.2em;
       display: flex;
       height: 100%;
       width: 10%;
@@ -160,11 +84,11 @@
       background-color: transparent;
       color: white;
     }
-    #h-nav > h1{
+    #h-nav > h1 {
       /* got this from figma */
       font-size: 1.56rem;
     }
-    #modal{
+    #modal {
       z-index: 99999;
       position: fixed;
       width: 100%;
@@ -173,24 +97,23 @@
       display: flex;
       flex-direction: column;
     }
-    #modal-inner{
+    #modal-inner {
       width: 50%;
       height: 100vh;
-      background-color:#666;
+      background-color: #666;
       /* padding: em 0; */
       padding-top: 2em;
       align-self: flex-end;
-      
-    } 
-    #modal-inner li{
+    }
+    #modal-inner li {
       margin-bottom: 2em;
-      background-color: #c4c4c4; 
+      background-color: #c4c4c4;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     #modal-inner li a {
-      padding: .5em;
+      padding: 0.5em;
       font-size: 1.5rem;
     }
   }
