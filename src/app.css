@@ -30,15 +30,27 @@ img {
   image-rendering: crisp-edges;
 }
 
-body {
-  min-height: 100vh;
-  /* overflow: hidden; */
-  background-color: var(--primary-color);
-  background: url(/static/forest-of-letters/bg-forest.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  scrollbar-width: thin;
-  background-attachment: fixed;
+@media (min-width: 320px) and (max-width: 749px) {
+  body {
+    background-color: var(--primary-color);
+    background: url(/static/forest-of-letters/bg-forest.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    scrollbar-width: thin;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 750px) {
+  body {
+    /*Need to upload on the next commit*/
+    background-color: var(--primary-color);
+    background: url(/static/forest-of-letters/bg-forest-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    scrollbar-width: thin;
+    background-attachment: fixed;
+  }
 }
 
 #svelte {
