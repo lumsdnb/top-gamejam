@@ -28,6 +28,14 @@
 </div>
 
 <style>
+  @media (min-width: 750px) {
+    .message-box {
+      max-width: 520px;
+      margin: auto;
+      margin-right: auto;
+      margin-right: 0px;
+    }
+  }
   /* add media query */
   .message-box {
     color: white;
