@@ -1,12 +1,12 @@
 ### note entry system
 
 - gets scale of character
-- tracks what notes player entered
+- [x] tracks what notes player entered
 - checks if sharps and flats are correct
 - [x] for testing, hardcode c major scale first, easiest to get basic logic working
-- put all input elements in form tag? best for accesibility and web standards i guess
 - [x] set up main game component that contains note grid, ui panels
-- impl gold count in main game component state
+- impl gold count in UI
+- get gold when winning
 - [x] note line renderer
   - [x] entered notes
   - [x] notes as separate components
@@ -18,7 +18,7 @@
 
 ### player msg box
 
-- change to button when 3 notes were entered
+- [x] change to button when 3 notes were entered
 - pressing it plays a submission sound & strums the chord presented, initiates chord check function in main gameobject
 
 ### story text system
@@ -37,15 +37,22 @@
 
 ### audio
 
-- harp? sounds for each note - or some other bardlike instrument
+- audio player object (keep in header?)
+- [x] harp? sounds for each note - or some other bardlike instrument
 - submit sound
 - button click
-- confirm sound
-- error sound
-- message letter click sound
+- [x] confirm sound
+- [x] error sound
+- [x] message letter click sound
 
 ### other nice to haves
 
+- transitions
+  - msgbox puh in/over/out
+  - receive gold
+  - change input panel value
+  - notes that poof/bounce in/out?
+- put all input elements in form tag? best for accesibility and web standards i guess
 - visual feedback, screen shakes, gold collecting
 - redesign level select screen in figma first (low prio)
 - unlock more complex game modes with gold to get more gold (low prio)

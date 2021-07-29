@@ -31,8 +31,8 @@
     {/each}
   </div>
 </div>
-<p>{`you entered ${$gameData.enteredNotes}`}</p>
 
+<!-- <p>{`you entered ${$gameData.enteredNotes}`}</p> -->
 <style>
   @media (min-width: 320px) {
     #container {

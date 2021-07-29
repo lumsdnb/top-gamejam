@@ -8,7 +8,6 @@
   let selectedNoteUI = 0;
   let noteNumberUI = 0;
   let noteTypeUI = 0;
-  export let characterMessage;
   const handlePlaceNote = () => {
     console.log('called');
     $gameData.enteredNotes.push($gameData.currentScale[selectedNoteUI]);
@@ -34,7 +33,7 @@
   };
 </script>
 
-<p>{`note: ${selectedNoteUI}, note # ${noteNumberUI}, type: ${noteTypeUI}`}</p>
+<!-- <p>{`note: ${selectedNoteUI}, note # ${noteNumberUI}, type: ${noteTypeUI}`}</p> -->
 <div id="container">
   <div id="span-1-col">
     <InputPanel
