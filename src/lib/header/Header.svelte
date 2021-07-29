@@ -10,7 +10,6 @@
     <button
       on:click={() => {
         modal = true;
-<<<<<<< HEAD
       }}
     >
       <img
@@ -19,10 +18,6 @@
         id="menu-icon"
       />
     </button>
-=======
-      }}><span>X</span></button
-    >
->>>>>>> 771996235b802ec72885df228ed976f639216481
     <h1>bard.io</h1>
   </nav>
 {:else}
@@ -70,7 +65,6 @@
     </ul>
   </div>
 {/if}
-<<<<<<< HEAD
 
 <!-- 
 <style>
@@ -154,15 +148,13 @@
     text-decoration: none;
     transition: color 0.2s linear;
   }
-=======
->>>>>>> 771996235b802ec72885df228ed976f639216481
 
+  a:hover {
+    color: var(--accent-color);
+  }
+</style> -->
 <style>
-<<<<<<< HEAD
   @media (min-width: 320px) and (max-width: 749px) {
-=======
-  @media (min-width: 320px) {
->>>>>>> 771996235b802ec72885df228ed976f639216481
     #h-nav {
       /* background-color: aquamarine; */
       width: 100%;
@@ -171,7 +163,6 @@
       align-items: center;
       padding: 0.8em 0;
       position: relative;
-      height: 7vh;
     }
     #h-nav > button {
       position: absolute;
@@ -208,7 +199,6 @@
       align-self: flex-end;
     }
     #modal-inner li {
-<<<<<<< HEAD
       margin-bottom: 2em;
       background-color: #c4c4c4;
       display: flex;
@@ -268,8 +258,6 @@
       align-self: flex-end;
     }
     #modal-inner li {
-=======
->>>>>>> 771996235b802ec72885df228ed976f639216481
       margin-bottom: 2em;
       background-color: #c4c4c4;
       display: flex;
