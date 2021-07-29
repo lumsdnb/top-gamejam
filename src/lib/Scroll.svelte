@@ -7,7 +7,26 @@
 </div>
 
 <style>
-  @media (min-width: 750px) {
+  @media (min-width: 900px) {
+    .scroll {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      bottom: 3rem;
+    }
+    img {
+      max-width: 366px;
+      max-height: 50%;
+      height: auto;
+      margin: auto;
+      margin-top: auto;
+      margin-left: auto;
+      position: relative;
+      margin-left: -2em;
+      margin-top: 2em;
+    }
+  }
+  @media (min-width: 750px) and (max-width: 899px) {
     .scroll {
       display: flex;
       justify-content: center;
