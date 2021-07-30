@@ -15,6 +15,7 @@ export const gameData = writable({
   tutorialState: 0,
   showScroll: false,
   canProgress: false,
+  canPresent: true,
   wonRound: false,
   showUI: false,
 });
@@ -30,6 +31,7 @@ export const messageSystem = readable([
   [
     'i need to cheer this fella up, what did the scroll say again..?',
     'i am sad, so very very sad...',
+    'text command',
   ],
   ['', ''],
   [
