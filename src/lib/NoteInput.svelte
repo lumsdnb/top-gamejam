@@ -115,9 +115,27 @@
   .submit-note:active {
     transform: scale(0.97);
   }
-  @media (min-width: 320px) {
+  @media (min-width: 750px) {
+    #container {
+      display: grid;
+      grid-template-areas:
+        'span-1-col span-2-col span-2-col '
+        'span-1-col span-2-col span-2-col '
+        'span-1-col submit  submit';
+      justify-items: center;
+      align-items: center;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: 0px;
+    }
+  }
+  @media (max-width: 749px) {
     #container {
       margin: 0 auto;
+    }
+  }
+  @media (min-width: 320px) {
+    #container {
       /* background-color: thistle; */
       display: grid;
       grid-template-areas:

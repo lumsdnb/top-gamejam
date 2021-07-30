@@ -23,7 +23,7 @@
       margin-left: auto;
       position: relative;
       margin-left: -2em;
-      margin-top: 2em;
+      margin-top: 5em;
     }
   }
   @media (min-width: 750px) and (max-width: 899px) {
@@ -37,12 +37,8 @@
       max-width: 40%;
       max-height: 50%;
       height: auto;
-      margin: auto;
-      margin-top: auto;
-      margin-left: auto;
       position: relative;
-      margin-left: -2em;
-      margin-top: 2em;
+      top: 3em;
     }
   }
   @media (min-width: 320px) and (max-width: 749px) {

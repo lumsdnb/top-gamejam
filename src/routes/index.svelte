@@ -126,10 +126,8 @@
     .player-box {
       position: absolute;
       bottom: 1rem;
-      width: 95vw;
-      right: 25%;
-      left: 50%;
-      margin-left: -47.5vw;
+      width: 90%;
+      margin: 0 auto;
     }
   }
 </style>
