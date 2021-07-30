@@ -1,5 +1,7 @@
 <script>
   import { page } from '$app/stores';
+  import { gameData } from '../../stores.js';
+
   import logo from '/static/assets/favicon.png';
   let hamburger = true;
   let modal = false;
@@ -19,6 +21,9 @@
       />
     </button>
     <h1>bard.io</h1>
+    <span style="color: white;padding-left: 1rem;font-size: .6rem;"
+      >game state {$gameData.tutorialState}
+    </span>
   </nav>
 {:else}
   <!-- else content here -->

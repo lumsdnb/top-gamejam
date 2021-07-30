@@ -7,27 +7,21 @@
   import NoteInput from '$lib/NoteInput.svelte';
   import MessageBox from '$lib/MessageBox.svelte';
   import Scroll from '$lib/Scroll.svelte';
-  import { gameData } from '../stores.js';
+  import { gameData, messageSystem } from '../stores.js';
+  import { fade } from 'svelte/transition';
 
-  let characterMessage = 'i am sad, so very very sad...';
-  let playerMessage = 'testing the typewriter effect, needs refactoring...';
   let characterMood = 'sad';
 
   const startGame = () => {
     $gameData.tutorialState = 1;
     $gameData.showScroll = true;
-    playerMessage = 'i wonder who left this here. how convenient...';
   };
   if ($gameData.tutorialState == 2) {
     $gameData.showUI = false;
-    characterMessage = 'i am sad, so very very sad...';
   }
   if ($gameData.tutorialState == 3) {
     console.log('state 3 fired');
-    characterMessage = '';
     $gameData.showUI = true;
-    playerMessage =
-      'i need to cheer this fella up, what did the scroll say again..?';
   }
   const checkAnswer = () => {
     console.log('checking answer...');
@@ -39,9 +33,9 @@
     console.log('chord needed: ' + majorChord);
     console.log('your chord: ' + $gameData.enteredNotes);
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
-      characterMessage = 'thank you.. <3';
       characterMood = 'happy';
-    } else characterMessage = "no, that's not quite right..";
+      $gameData.tutorialState = 6;
+    } else $gameData.tutorialState = 5;
   };
 
   function arrayCompare(_arr1, _arr2) {
@@ -69,7 +63,6 @@
 <svelte:head>
   <title>Home</title>
 </svelte:head>
-<!-- {$gameData.tutorialState} -->
 <!-- intro screen -->
 {#if $gameData.tutorialState == 0}
   <section class="welcome">
@@ -85,16 +78,23 @@
 
 <!-- main screen -->
 {#if $gameData.tutorialState >= 2}
-  <MessageBox message={characterMessage} mood={characterMood} />
-  {#if $gameData.showUI}
-    <section>
+  <MessageBox
+    message={$messageSystem[$gameData.tutorialState][1]}
+    mood={characterMood}
+  />
+  {#if $gameData.tutorialState >= 4}
+    <section transition:fade>
       <NoteRenderer />
-      <NoteInput bind:characterMessage />
+      <NoteInput />
     </section>
   {/if}
 {/if}
 <div class="player-box">
-  <MessageBox message={playerMessage} player on:click={checkAnswer} />
+  <MessageBox
+    message={$messageSystem[$gameData.tutorialState][0]}
+    player
+    on:click={checkAnswer}
+  />
 </div>
 
 <style>

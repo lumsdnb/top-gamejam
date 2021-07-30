@@ -1,7 +1,7 @@
 <script>
   import arrow from './arrow.svg';
   import InputPanel from '$lib/InputPanel.svelte';
-  import { gameData, userInterface } from '../stores';
+  import { gameData } from '../stores';
   let scaleValues = $gameData.currentScale;
   let notePos = ['note 1/3', 'note 2/3', 'note 3/3'];
   let noteType = ['normal', 'sharp', 'flat'];
