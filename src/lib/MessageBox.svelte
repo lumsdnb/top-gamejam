@@ -1,8 +1,7 @@
 <script>
   import Typewriter from 'svelte-typewriter';
   import { set_data } from 'svelte/internal';
-  import { gameData } from '../stores.js';
-  export let message = 'i am sad...';
+  import { gameData, messageSystem } from '../stores.js';
   export let player = false;
   export let mood = 'sad';
 
@@ -20,19 +19,20 @@
 <div class="message-box">
   {#if player}
     <img id="player-img" src="/static/assets/favicon.png" alt="" />
-    {#if $gameData.enteredNotes.length >= 3}
+    <!-- show btn when chord is built - todo: hide when  -->
+    {#if $gameData.enteredNotes.length >= 3 && $gameData.canPresent}
       <button class="check-btn" on:click>present chord</button>
     {/if}
     {#if $gameData.enteredNotes.length < 3}
       <Typewriter interval={100} cursor={false}>
-        <p>{message}</p>
+        <p>{$messageSystem[$gameData.tutorialState][0]}</p>
       </Typewriter>
     {/if}
     <button on:click={nextStep}>next</button>
   {:else}
     <!-- opponent box -->
     <Typewriter interval={100} cursor={false} on:done={showNextButton}>
-      <p>{message}</p>
+      <p>{$messageSystem[$gameData.tutorialState][1]}</p>
     </Typewriter>
     <img src={`/static/forest-of-letters/c-${mood}.png`} alt="" />
   {/if}

@@ -6,9 +6,10 @@
   import NoteRenderer from '$lib/NoteRenderer.svelte';
   import NoteInput from '$lib/NoteInput.svelte';
   import MessageBox from '$lib/MessageBox.svelte';
+  import ReceiveGoldUI from '$lib/ReceiveGoldUI.svelte';
   import Scroll from '$lib/Scroll.svelte';
   import { gameData, messageSystem } from '../stores.js';
-  import { fade } from 'svelte/transition';
+  import { fade, fly, slide } from 'svelte/transition';
 
   let characterMood = 'sad';
 
@@ -16,12 +17,16 @@
     $gameData.tutorialState = 1;
     $gameData.showScroll = true;
   };
-  if ($gameData.tutorialState == 2) {
+  if ($gameData.tutorialState === 2) {
     $gameData.showUI = false;
   }
-  if ($gameData.tutorialState == 3) {
+  if ($gameData.tutorialState === 3) {
     console.log('state 3 fired');
     $gameData.showUI = true;
+  }
+  if ($gameData.tutorialState >= 7) {
+    console.log('state 3 fired');
+    $gameData.showUI = false;
   }
   const checkAnswer = () => {
     console.log('checking answer...');
@@ -35,6 +40,9 @@
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
       characterMood = 'happy';
       $gameData.tutorialState = 6;
+      $gameData.gold += 25;
+      $gameData.wonRound = true;
+      $gameData.canPresent = false;
     } else $gameData.tutorialState = 5;
   };
 
@@ -65,7 +73,7 @@
 </svelte:head>
 <!-- intro screen -->
 {#if $gameData.tutorialState == 0}
-  <section class="welcome">
+  <section class="welcome" in:fade={{ duration: 400 }} out:slide>
     <h1>welcome to the forest of letters</h1>
     <button on:click={startGame}>enter</button>
   </section>
@@ -73,28 +81,29 @@
 
 <!-- scroll screen -->
 {#if $gameData.tutorialState == 1}
-  <Scroll type="c" />
+  <div class="scroll" transition:fly={{ y: 200, duration: 700 }}>
+    <Scroll type="c" />
+  </div>
 {/if}
 
 <!-- main screen -->
 {#if $gameData.tutorialState >= 2}
-  <MessageBox
-    message={$messageSystem[$gameData.tutorialState][1]}
-    mood={characterMood}
-  />
+  <MessageBox mood={characterMood} />
   {#if $gameData.tutorialState >= 4}
     <section transition:fade>
       <NoteRenderer />
-      <NoteInput />
+      {#if $gameData.tutorialState < 6}
+        <NoteInput />
+      {:else}
+        <div in:fly={{ y: -200, duration: 700 }} out:fade>
+          <ReceiveGoldUI />
+        </div>
+      {/if}
     </section>
   {/if}
 {/if}
 <div class="player-box">
-  <MessageBox
-    message={$messageSystem[$gameData.tutorialState][0]}
-    player
-    on:click={checkAnswer}
-  />
+  <MessageBox player on:click={checkAnswer} />
 </div>
 
 <style>
