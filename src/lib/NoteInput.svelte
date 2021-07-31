@@ -22,6 +22,9 @@
     console.log('note has been entered');
     if ($gameData.enteredNotes.includes(note) === false) {
       $gameData.enteredNotes.push(note);
+      // AUDIO HERE
+      const noteAudio = document.querySelector(`audio[data-note=${note}]`);
+      noteAudio.play();
     }
     console.log($gameData.enteredNotes);
     $gameData.enteredNotes = $gameData.enteredNotes;
@@ -30,6 +33,9 @@
     console.log('removing note');
     $gameData.enteredNotes.splice(-1, 1);
     $gameData.enteredNotes = $gameData.enteredNotes;
+    // AUDIO HERE
+    const removeAudio = document.querySelector(`#audio-click`);
+    removeAudio.play();
   };
 </script>
 
@@ -56,6 +62,27 @@
     >
   </div>
 </div>
+
+<!--Individual note audio tags-->
+<audio data-note="c" id="audio-c" src="../static/sounds/note1.wav" />
+<audio data-note="cs" id="audio-csharp" src="../static/sounds/note2.wav" />
+<audio data-note="d" id="audio-d" src="../static/sounds/note3.wav" />
+<audio data-note="ds" id="audio-dsharp" src="../static/sounds/note4.wav" />
+<audio data-note="e" id="audio-e" src="../static/sounds/note5.wav" />
+<audio data-note="f" id="audio-f" src="../static/sounds/note6.wav" />
+<audio data-note="fs" id="audio-fsharp" src="../static/sounds/note7.wav" />
+<audio data-note="g" id="audio-g" src="../static/sounds/note8.wav" />
+<audio data-note="gs" id="audio-gsharp" src="../static/sounds/note9.wav" />
+<audio data-note="a" id="audio-a" src="../static/sounds/note10.wav" />
+<audio data-note="as" id="audio-asharp" src="../static/sounds/note11.wav" />
+<audio data-note="b" id="audio-b" src="../static/sounds/note12.wav" />
+
+<!--UI audio tags-->
+<audio id="audio-correct" src="../static/sounds/correct.wav" />
+<audio id="audio-incorrect" src="../static/sounds/incorrect.wav" />
+<audio id="audio-click-high" src="../static/sounds/click-high.wav" />
+<audio id="audio-click" src="../static/sounds/click.wav" />
+<audio id="audio-msg-click" src="../static/sounds/msg-click.wav" />
 
 <!-- <style>
   .submit-note {
