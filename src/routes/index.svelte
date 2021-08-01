@@ -12,7 +12,6 @@
   import { fade, fly, slide } from 'svelte/transition';
 
   let characterMood = 'sad';
-
   const playPresentedChord = () => {
     console.log('playing chord');
     $gameData.enteredNotesAsID.forEach((note, i) => {
@@ -67,6 +66,7 @@
       $gameData.gold += 25;
       $gameData.wonRound = true;
       $gameData.canPresent = false;
+      $gameData.completedLetters.push('c');
     } else $gameData.tutorialState = 5;
   };
 
@@ -93,7 +93,7 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
+  <title>bard.io</title>
 </svelte:head>
 <!-- intro screen -->
 {#if $gameData.tutorialState == 0}
@@ -105,7 +105,7 @@
 
 <!-- scroll screen -->
 {#if $gameData.tutorialState == 1}
-  <div class="scroll" transition:fly={{ y: 200, duration: 700 }}>
+  <div class="scroll" transition:fly={{ y: 200, duration: 200 }}>
     <Scroll type="c" />
   </div>
 {/if}
@@ -122,7 +122,7 @@
       {#if $gameData.tutorialState <= 5}
         <MainInput />
       {:else}
-        <div in:fly={{ y: -200, duration: 700 }} out:fade>
+        <div in:fly={{ y: -200, duration: 500 }} out:fade>
           <ReceiveGoldUI />
         </div>
       {/if}

@@ -55,6 +55,16 @@
   //   console.log('state 3 fired');
   //   $gameData.showUI = false;
   // }
+  const correctAnswer = () => {
+    characterMood = 'happy';
+    // not for non tutorial
+    // $gameData.tutorialState = 6;
+    charMessageID = 1;
+    $gameData.gold += 25;
+    $gameData.wonRound = true;
+    $gameData.canPresent = false;
+    $gameData.completedLetters.push(roundLetter);
+  };
 
   const checkAnswer = () => {
     console.log('checking answer...');
@@ -76,12 +86,7 @@
     console.log('chord needed: ' + majorChord);
     console.log('your chord: ' + $gameData.enteredNotes);
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
-      characterMood = 'happy';
-      $gameData.tutorialState = 6;
-      charMessageID = 1;
-      $gameData.gold += 25;
-      $gameData.wonRound = true;
-      $gameData.canPresent = false;
+      correctAnswer();
     } else charMessageID = 2;
   };
 
