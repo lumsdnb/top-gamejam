@@ -1,16 +1,17 @@
 <script>
-  import arrow from './arrow.svg';
+  import arrow from '/static/assets/arrow.svg';
   export let type = 'regular';
   export let values = 'x';
   export let currentValue;
+  import { base, assets } from '$app/paths';
 
   const playUISound = () => {
-    let snd = new Audio('./static/sounds/click-high.wav'); // buffers automatically when created
+    let snd = new Audio('static/sounds/click-high.wav'); // buffers automatically when created
     snd.play();
+    console.log('HEYYYYYYYYYYY ');
   };
 
   let i = 0;
-  const clickSound = document.querySelector(`#audio-click`);
   const incrementValue = () => {
     i++;
     playUISound();
