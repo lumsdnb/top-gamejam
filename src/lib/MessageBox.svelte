@@ -5,6 +5,7 @@
   export let player = false;
   export let mood = 'sad';
   export let noteLetter = 'c';
+  export let message = 'YALLS';
   const showNextButton = () => {
     console.log('showing btn');
     document.getElementById('next-button').classList.remove('hidden');
@@ -27,7 +28,7 @@
     {/if}
     {#if $gameData.enteredNotes.length < 3}
       <Typewriter interval={100} cursor={false} on:done={showNextButton}>
-        <p class="msg-txt">{$messageSystem[$gameData.tutorialState][0]}</p>
+        <p class="msg-txt">{message}</p>
       </Typewriter>
     {/if}
 
@@ -35,7 +36,7 @@
   {:else}
     <!-- opponent box -->
     <Typewriter interval={100} cursor={false} on:done={showNextButton}>
-      <p class="msg-txt">{$messageSystem[$gameData.tutorialState][1]}</p>
+      <p class="msg-txt">{message}</p>
     </Typewriter>
     <img src={`/static/forest-of-letters/${noteLetter}-${mood}.png`} alt="" />
   {/if}

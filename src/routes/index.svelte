@@ -123,7 +123,10 @@
 
 <!-- main screen -->
 {#if $gameData.tutorialState >= 2}
-  <MessageBox mood={characterMood} />
+  <MessageBox
+    mood={characterMood}
+    message={$messageSystem[$gameData.tutorialState][1]}
+  />
   {#if $gameData.tutorialState >= 4}
     <section transition:fade>
       <NoteRenderer />
@@ -139,7 +142,11 @@
 {/if}
 
 <div class="player-box">
-  <MessageBox player on:click={checkAnswer} />
+  <MessageBox
+    player
+    on:click={checkAnswer}
+    message={$messageSystem[$gameData.tutorialState][0]}
+  />
 </div>
 
 <!--UI audio tags-->
