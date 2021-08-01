@@ -1,13 +1,13 @@
 <script>
-  import { identity } from "svelte/internal";
+  import { identity } from 'svelte/internal';
 
   export let imgSrc;
   export let imgAlt;
   export let linkSrc;
-  export let message = "Easy level to get started with..";
+  export let message = 'Easy level to get started with..';
   let showDetails = false;
   const clickHandler = () => {
-    console.log("cliked");
+    console.log('cliked');
     return (showDetails = showDetails ? false : true);
   };
 </script>
