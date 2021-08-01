@@ -4,6 +4,7 @@
   import { gameData } from '../stores.js';
   let scale = $gameData.currentScale;
   let enteredNotes = $gameData.enteredNotes;
+  let noteTypes = $gameData.enteredNoteTypes;
 </script>
 
 <div id="container">
@@ -23,12 +24,13 @@
     <!-- the individual notes have to be positioned absolutely -->
     <!-- place note here -->
     {#each Array(7) as _, i}
-      {#if $gameData.enteredNotes.includes(scale[i])}
+      {#if enteredNotes.includes($gameData.letters[i])}
         <div class={`n${i}`}>
           <Note />
         </div>
       {/if}
     {/each}
+    <p>{noteTypes}</p>
   </div>
 </div>
 

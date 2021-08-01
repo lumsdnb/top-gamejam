@@ -2,7 +2,7 @@
   import arrow from './arrow.svg';
   import InputPanel from '$lib/InputPanel.svelte';
   import { gameData } from '../stores';
-  import NewNoteInputPanel from './NewNoteInputPanel.svelte';
+  import NoteInputPanel from './NoteInputPanel.svelte';
   let scaleValues = [$gameData.currentScale];
   let noteNumberUI = 0;
   let noteTypeUI = 0;
@@ -61,7 +61,7 @@
 
 <p>{$gameData.enteredNoteTypes}</p>
 <div class="container">
-  <NewNoteInputPanel
+  <NoteInputPanel
     bind:currentNote={noteNumberUI}
     bind:currentNoteType={noteTypeUI}
   />
