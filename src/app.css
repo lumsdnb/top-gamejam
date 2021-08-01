@@ -6,8 +6,8 @@
   padding: 0;
 }
 :root {
-  font-family: 'Press Start 2P', cursive;
-  --font-mono: 'Fira Mono', monospace;
+  font-size: 10px;
+  font-family: 'Press Start 2P', 'Arial';
   --pure-white: #ffffff;
   --primary-color: #b9c6d2;
   --secondary-color: #d0dde9;
@@ -23,6 +23,11 @@
   --background-without-opacity: rgba(255, 255, 255, 0.7);
   --column-width: 42rem;
   --column-margin-top: 4rem;
+  --fz1: 3.052rem;
+  --fz2: 2.441rem;
+  --fz3: 1.953rem;
+  --fz4: 1.563rem;
+  --fz5: 1rem;
 }
 img {
   image-rendering: pixelated;
@@ -80,18 +85,19 @@ a:hover {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: var(--fz1);
   margin-bottom: 0 0 1em 0;
   text-align: center;
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: var(--fz2);
 }
-
+h3 {
+  font-size: var(--fz3);
+}
 pre {
   font-size: 16px;
-  font-family: var(--font-mono);
   background-color: rgba(255, 255, 255, 0.45);
   border-radius: 3px;
   box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
