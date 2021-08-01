@@ -34,9 +34,11 @@
         <li class:active={$page.path === '/'}>
           <a sveltekit:prefetch href="/">Home</a>
         </li>
-        <li class:active={$page.path === '/levels'}>
-          <a sveltekit:prefetch href="/levels">Levels</a>
-        </li>
+        {#if $gameData.tutorialState >= 6}
+          <li class:active={$page.path === '/levels'}>
+            <a sveltekit:prefetch href="/levels">Levels</a>
+          </li>
+        {/if}
         <li class:active={$page.path === '/about'}>
           <a sveltekit:prefetch href="/about">About</a>
         </li>

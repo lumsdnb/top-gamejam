@@ -13,7 +13,12 @@
     +25
   </div>
   <div id="span-2-col">
-    <button on:click={nextStep} class="submit-note shade">continue</button>
+    <a
+      class="continue-button shade"
+      on:click={nextStep}
+      sveltekit:prefetch
+      href="/levels">continue</a
+    >
   </div>
 </div>
 
@@ -42,11 +47,17 @@
       filter: drop-shadow(6px 6px 5px black);
     }
 
-    .submit-note {
+    .continue-button {
       color: var(--accent-color2);
       border: none;
       background-color: transparent;
       user-select: none;
+      font-size: var(--fz3);
+      filter: drop-shadow(6px 6px 5px black);
+    }
+    .continue-button:hover {
+      transform: scale(1.1);
+      text-decoration: none;
     }
     button {
       padding: 1rem;

@@ -4,7 +4,7 @@
   import { gameData, messageSystem } from '../stores.js';
   export let player = false;
   export let mood = 'sad';
-
+  export let noteLetter = 'c';
   const showNextButton = () => {
     console.log('showing btn');
     document.getElementById('next-button').classList.remove('hidden');
@@ -37,7 +37,7 @@
     <Typewriter interval={100} cursor={false} on:done={showNextButton}>
       <p class="msg-txt">{$messageSystem[$gameData.tutorialState][1]}</p>
     </Typewriter>
-    <img src={`/static/forest-of-letters/c-${mood}.png`} alt="" />
+    <img src={`/static/forest-of-letters/${noteLetter}-${mood}.png`} alt="" />
   {/if}
   <!-- boxes on the corners -->
   <div class="box b1" />

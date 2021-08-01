@@ -16,7 +16,7 @@
 <div id="level-list">
   {#each cleanedScales as element, i (element)}
     <Level
-      linkSrc={`/levels/${element}`}
+      linkSrc={`/level/${element}`}
       imgSrc={`./static/forest-of-letters/${element}-happy.png`}
       imgAlt={`letter ${element.toUpperCase()}`}
     />
