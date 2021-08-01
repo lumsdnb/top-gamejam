@@ -100,7 +100,11 @@
   }
 </script>
 
-<MessageBox mood={characterMood} noteLetter={$page.params.slug} />
+<MessageBox
+  mood={characterMood}
+  noteLetter={$page.params.slug}
+  message="help.. please..."
+/>
 <p>{$gameData.tutorialState}</p>
 
 <section transition:fade>
@@ -114,7 +118,7 @@
   {/if}
 </section>
 <div class="player-box">
-  <MessageBox player on:click={checkAnswer} />
+  <MessageBox player on:click={checkAnswer} message="i know how to do this" />
 </div>
 
 <style>
