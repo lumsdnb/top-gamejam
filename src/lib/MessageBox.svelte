@@ -7,8 +7,10 @@
 
   const showNextButton = () => {
     console.log('showing btn');
+    document.getElementById('next-button').classList.remove('hidden');
   };
   const nextStep = () => {
+    //document.getElementById('next-button').classList.add('hidden');
     if ($gameData.tutorialState !== 4) {
       $gameData.tutorialState += 1;
     }
@@ -24,15 +26,16 @@
       <button class="check-btn" on:click>present chord</button>
     {/if}
     {#if $gameData.enteredNotes.length < 3}
-      <Typewriter interval={100} cursor={false}>
-        <p>{$messageSystem[$gameData.tutorialState][0]}</p>
+      <Typewriter interval={100} cursor={false} on:done={showNextButton}>
+        <p class="msg-txt">{$messageSystem[$gameData.tutorialState][0]}</p>
       </Typewriter>
     {/if}
-    <button on:click={nextStep}>next</button>
+
+    <button id="next-button" class="hidden" on:click={nextStep}>next</button>
   {:else}
     <!-- opponent box -->
     <Typewriter interval={100} cursor={false} on:done={showNextButton}>
-      <p>{$messageSystem[$gameData.tutorialState][1]}</p>
+      <p class="msg-txt">{$messageSystem[$gameData.tutorialState][1]}</p>
     </Typewriter>
     <img src={`/static/forest-of-letters/c-${mood}.png`} alt="" />
   {/if}
@@ -44,6 +47,9 @@
 </div>
 
 <style>
+  .hidden {
+    visibility: hidden;
+  }
   @media (min-width: 750px) {
     .message-box {
       max-width: 520px;
@@ -68,8 +74,10 @@
     /* display: grid;
     grid-template-columns: ; */
   }
-  .message-box > p {
+
+  .msg-txt {
     padding: 0 1rem;
+    font-size: var(--fz5);
   }
   img {
     max-width: 25%;
