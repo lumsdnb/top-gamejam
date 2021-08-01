@@ -10,7 +10,6 @@
     snd.play();
   };
 
-  const clickSound = document.querySelector(`#audio-click`);
   const incrementNote = () => {
     currentNote++;
     playUISound();
