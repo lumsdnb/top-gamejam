@@ -1,70 +1,38 @@
 [
-{
-    "scale": "C",
-    "notes":["C", "D", "E", "F", "G", "A", "B"]
-},
-{
-    "scale": "C#",
-    "notes":["C#", "D#", "E#", "F#", "G#",  "A#",  "B#"]
-},
-{
-    "scale": "Db",
-    "notes":["Db",  "Eb",  "F", "Gb",  "Ab", "Bb", "C"]
-},
-{
-    "scale": "D",
-    "notes":["D", "E", "F#", "G", "A", "B ", "C#"]
-},
-{
-    "scale": "D#",
-    "notes":["D#", "E#", "Fx", "G#", "A#", "B#", "Cx"]
-},
-{
-    "scale": "Eb",
-    "notes":["Eb",  "F", "G", "Ab", "Bb", "C", "D"]
-},
-{
-    "scale": "E",
-    "notes":["E", "F#", "G#","A", "B", "C#", "D#"]
-},
-{
-    "scale": "F",
-    "notes":["F", "G", "A", "Bb", "C", "D", "E"]
-},
-{
-    "scale": "F#",
-    "notes":["F#", "G#",  "A#", "B", "C#", "D#", "E#"]
-},
-{
-    "scale": "Gb",
-    "notes":["Gb", "Ab", "Bb", "Cb", "Db", "Eb","F"]
-},
-{
-    "scale": "G",
-    "notes":["G", "A", "B", "C", "D", "E", "F#"]
-},
-{
-    "scale": "G#",
-    "notes":["G#", "A#", "B#", "C#", "D#", "E#", "Fx"]
-},
-{
-    "scale": "Ab",
-    "notes":["Ab", "Bb", "C", "Db", "Eb", "F", "G"]
-    },
-    {
-        "scale": "A",
-        "notes":["A" ,"A",  "B", "C#", "D", "E", "F#", "G#"]
-    },
-    {
-        "scale": "A#",
-        "notes":["A#", "B#", "Cx", "D#", "E#", "Fx", "Gx"]
-    },
-    {
-        "scale": "Bb",
-        "notes":[ "Bb", "C", "D", "Eb", "F", "G", "A"]
-    },
-    {
-        "scale": "B",
-        "notes":["B", "C#", "D#", "E", "F#", "G#", "A#"]
-    }
+  {
+    "scale": "c",
+    "notes": ["c", "d", "e", "f", "g", "a", "b"],
+    "noteTypes": [0, 0, 0, 0, 0, 0, 0]
+  },
+  {
+    "scale": "d",
+    "notes": ["d", "e", "f", "g", "a", "B ", "c"],
+    "noteTypes": [0, 0, 1, 0, 0, 0, 1]
+  },
+  {
+    "scale": "e",
+    "notes": ["e", "f", "g", "a", "b", "c", "d"],
+    "noteTypes": [0, 1, 1, 0, 0, 1, 1]
+  },
+  {
+    "scale": "f",
+    "notes": ["f", "g", "a", "b", "c", "d", "e"],
+    "noteTypes": [0, 0, 0, 2, 0, 0, 0]
+  },
+  {
+    "scale": "g",
+    "notes": ["g", "a", "b", "c", "d", "e", "f"],
+    "noteTypes": [0, 0, 0, 0, 0, 0, 1]
+  },
+
+  {
+    "scale": "a",
+    "notes": ["a", "b", "c", "d", "e", "f", "g"],
+    "noteTypes": [0, 0, 1, 0, 0, 1, 1]
+  },
+  {
+    "scale": "b",
+    "notes": ["b", "c", "d", "e", "f", "g", "a"],
+    "noteTypes": [0, 1, 1, 0, 1, 1, 1]
+  }
 ]

@@ -3,7 +3,7 @@
   import scales from '/static/scales.json';
   import MessageBox from '$lib/MessageBox.svelte';
   import { gameData, messageSystem } from '../stores.js';
-  const cleanedScales = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
+  let letters = $gameData.letters;
   //todo: filter out duplicate letters (sharps, flats)
   const parsedScales = JSON.parse(JSON.stringify(scales));
   parsedScales.forEach((element) => {
@@ -13,7 +13,7 @@
 
 <h1 id="title">pick a scale</h1>
 <div id="level-list">
-  {#each cleanedScales as element, i (element)}
+  {#each letters as element, i (element)}
     <Level
       linkSrc={`/level/${element}`}
       imgSrc={`./static/forest-of-letters/${element}-happy.png`}

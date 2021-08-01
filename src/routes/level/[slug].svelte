@@ -7,14 +7,31 @@
   import Scroll from '$lib/Scroll.svelte';
   import { fade, fly, slide } from 'svelte/transition';
   import { gameData, characterMessages } from '$lib/../stores';
+  import scalesJSON from '/static/scales.json';
 
   let characterMood = 'sad';
   let roundLetter = $page.params.slug;
 
+  console.log(roundLetter);
+
+  let noteIndex = $gameData.letters.findIndex((n) => {
+    if (n === roundLetter) {
+      return true;
+    }
+  });
+
+  $gameData.currentScale = scalesJSON[noteIndex].notes;
+  $gameData.currentNoteTypes = scalesJSON[noteIndex].noteTypes;
+  console.log(scalesJSON[noteIndex].notes);
+  // messages pulled from store
+  let charMessages = $characterMessages[roundLetter];
+  let charMessageID = 0;
+
+  console.log('key is ' + noteIndex);
+
   const playPresentedChord = () => {
     console.log('playing chord');
     $gameData.enteredNotesAsID.forEach((note, i) => {
-      console.log('it issssss . . .');
       console.log(note);
 
       const sound = new Audio(`../static/sounds/note${note}.wav`);
@@ -22,21 +39,21 @@
     });
   };
 
-  const startGame = () => {
-    $gameData.tutorialState = 1;
-    $gameData.showScroll = true;
-  };
-  if ($gameData.tutorialState === 2) {
-    $gameData.showUI = false;
-  }
-  if ($gameData.tutorialState === 3) {
-    console.log('state 3 fired');
-    $gameData.showUI = true;
-  }
-  if ($gameData.tutorialState >= 7) {
-    console.log('state 3 fired');
-    $gameData.showUI = false;
-  }
+  // const startGame = () => {
+  //   $gameData.tutorialState = 1;
+  //   $gameData.showScroll = true;
+  // };
+  // if ($gameData.tutorialState === 2) {
+  //   $gameData.showUI = false;
+  // }
+  // if ($gameData.tutorialState === 3) {
+  //   console.log('state 3 fired');
+  //   $gameData.showUI = true;
+  // }
+  // if ($gameData.tutorialState >= 7) {
+  //   console.log('state 3 fired');
+  //   $gameData.showUI = false;
+  // }
 
   const checkAnswer = () => {
     console.log('checking answer...');
@@ -60,10 +77,11 @@
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
       characterMood = 'happy';
       $gameData.tutorialState = 6;
+      charMessageID = 1;
       $gameData.gold += 25;
       $gameData.wonRound = true;
       $gameData.canPresent = false;
-    } else $gameData.tutorialState = 5;
+    } else charMessageID = 2;
   };
 
   function arrayCompare(_arr1, _arr2) {
@@ -91,22 +109,24 @@
 <MessageBox
   mood={characterMood}
   noteLetter={$page.params.slug}
-  message={$characterMessages.e[0]}
+  message={charMessages[charMessageID]}
 />
 <p>{$gameData.tutorialState}</p>
 
 <section transition:fade>
   <NoteRenderer />
-  {#if ($gameData.wonRound = true)}
-    <MainInput />
-  {:else}
+  {#if $gameData.wonRound}
+    <!-- ------   you won some gold!------    -->
     <div in:fly={{ y: -200, duration: 700 }} out:fade>
       <ReceiveGoldUI />
     </div>
+  {:else}
+    <MainInput />
   {/if}
 </section>
 <div class="player-box">
   <MessageBox player on:click={checkAnswer} message="i know how to do this" />
+  {$gameData.wonRound}
 </div>
 
 <style>

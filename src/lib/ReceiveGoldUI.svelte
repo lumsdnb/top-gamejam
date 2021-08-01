@@ -5,7 +5,8 @@
     $gameData.enteredNotesAsID = [];
     $gameData.enteredNotes = [];
     $gameData.enteredNoteTypes = [];
-    $gameData.tutorialState += 1;
+    $gameData.tutorialState = 8;
+    $gameData.wonRound = false;
   };
 </script>
 
@@ -61,8 +62,6 @@
     .continue-button:hover {
       transform: scale(1.1);
       text-decoration: none;
-    }
-    button {
       padding: 1rem;
       color: var(--accent-color2);
       background-color: transparent;
@@ -70,6 +69,7 @@
       font-size: var(--fz2);
       filter: drop-shadow(6px 6px 5px black);
     }
+
     button:hover {
       transform: scale(1.05);
     }

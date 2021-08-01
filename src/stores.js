@@ -4,10 +4,11 @@ export const gameData = writable({
   name: 'bob',
   gold: 420,
   // this keeps track of each letter, when user inputs a sharp or flat, add or subtract 1 to the position
-  letterPositions: [1, 3, 5, 6, 8, 10, 12],
   letters: ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
+  letterPositions: [1, 3, 5, 6, 8, 10, 12],
   currentScale: ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
   currentScaleNum: [1, 3, 5, 6, 8, 10, 12],
+  currentNoteTypes: [],
   //type letters (string)
   enteredNotes: [],
   //1-12 (halftones)
@@ -46,6 +47,7 @@ export const messageSystem = readable([
   ],
   ['', 'thank you.. <3'],
   ['well that was.. something. i wonder what else i will find here..', ''],
+  ['hmmm.. where to go next...', ''],
 ]);
 
 export const characterMessages = readable({
