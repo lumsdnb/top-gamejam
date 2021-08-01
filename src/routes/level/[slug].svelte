@@ -28,6 +28,7 @@
   let charMessageID = 0;
 
   console.log('key is ' + noteIndex);
+  $gameData.canPresent = true;
 
   const playPresentedChord = () => {
     console.log('playing chord');
@@ -111,7 +112,6 @@
   noteLetter={$page.params.slug}
   message={charMessages[charMessageID]}
 />
-<p>{$gameData.tutorialState}</p>
 
 <section transition:fade>
   <NoteRenderer />

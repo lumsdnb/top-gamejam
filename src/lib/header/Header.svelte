@@ -20,9 +20,7 @@
         id="menu-icon"
       />
     </button>
-    <span style="color: white;padding-left: 1rem;font-size: .6rem;"
-      >game state {$gameData.tutorialState}
-    </span>
+    <h1>game state {$gameData.tutorialState}</h1>
   </nav>
 {:else}
   <!-- else content here -->
@@ -137,7 +135,7 @@
   }
   @media (min-width: 750px) {
     #menu-icon {
-      width: 70%;
+      width: 100%;
       max-width: 50px;
       left: 0px;
     }
