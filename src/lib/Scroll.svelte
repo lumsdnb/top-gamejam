@@ -8,6 +8,7 @@
   </div>
   <div class="scroll-text">
     <p>chords are build from different notes of the major scale</p>
+    <br
     <p>1st 3rd and 5th create a major chord</p>
   </div>
 </div>
@@ -17,11 +18,11 @@
     color: black;
   }
   .scroll-text {
-    position: absolute;
-    font-size: 0.75rem;
-    bottom: 15rem;
-    left: 5rem;
-    max-width: 14rem;
+    position: relative;
+    font-size: var(--fz5);
+    bottom: 23rem;
+    left: 7rem;
+    max-width: 19rem;
     z-index: 4;
   }
   @media (min-width: 900px) {

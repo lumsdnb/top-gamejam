@@ -30,7 +30,6 @@
         </div>
       {/if}
     {/each}
-    <p>{noteTypes}</p>
   </div>
 </div>
 

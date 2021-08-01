@@ -10,17 +10,11 @@
 </main>
 
 <style>
-  /* main {
-    flex: 1;
+  main {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    width: 100%;
-    max-width: 1024px;
-    margin: 0 auto;
-    box-sizing: border-box;
-    background-color: ;
-  } */
+    align-items: center;
+  }
   @media (min-width: 320px) and (max-width: 749px) {
     main {
       width: 90%;

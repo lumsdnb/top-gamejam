@@ -24,6 +24,7 @@ export const gameData = writable({
 
   tutorialState: 0,
   finishedTutorial: false,
+  completedLetters: [],
   showScroll: false,
   canProgress: false,
   canPresent: true,
