@@ -6,9 +6,10 @@
   import ReceiveGoldUI from '$lib/ReceiveGoldUI.svelte';
   import Scroll from '$lib/Scroll.svelte';
   import { fade, fly, slide } from 'svelte/transition';
-  import { gameData } from '$lib/../stores';
+  import { gameData, characterMessages } from '$lib/../stores';
 
   let characterMood = 'sad';
+  let roundLetter = $page.params.slug;
 
   const playPresentedChord = () => {
     console.log('playing chord');
@@ -62,19 +63,6 @@
       $gameData.gold += 25;
       $gameData.wonRound = true;
       $gameData.canPresent = false;
-      //audio
-      const correctAudio1 = document.querySelector(
-        `audio[data-note=${$gameData.enteredNotes[0]}]`
-      );
-      correctAudio1.play();
-      const correctAudio2 = document.querySelector(
-        `audio[data-note=${$gameData.enteredNotes[1]}]`
-      );
-      correctAudio2.play();
-      const correctAudio3 = document.querySelector(
-        `audio[data-note=${$gameData.enteredNotes[2]}]`
-      );
-      correctAudio3.play();
     } else $gameData.tutorialState = 5;
   };
 
@@ -103,7 +91,7 @@
 <MessageBox
   mood={characterMood}
   noteLetter={$page.params.slug}
-  message="help.. please..."
+  message={$characterMessages.e[0]}
 />
 <p>{$gameData.tutorialState}</p>
 

@@ -36,12 +36,16 @@
 
 <!-- <p>{`you entered ${$gameData.enteredNotes}`}</p> -->
 <style>
+  #container {
+    width: 100%;
+  }
   @media (min-width: 750px) {
     #container {
       background-color: transparent;
       border: none;
       display: flex;
       margin-bottom: 1em;
+
       max-width: 520px;
       position: relative;
       margin-left: auto;

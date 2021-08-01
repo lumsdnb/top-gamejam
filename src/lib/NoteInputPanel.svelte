@@ -1,12 +1,12 @@
 <script>
-  import arrow from './arrow.svg';
+  import arrow from '/static/assets/arrow.svg';
   let notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
   let noteType = ['', '♯', '♭'];
   export let currentNote = 0;
   export let currentNoteType = 0;
   let i = 0;
   const playUISound = () => {
-    let snd = new Audio('./static/sounds/click-high.wav'); // buffers automatically when created
+    let snd = new Audio('../static/sounds/click-high.wav'); // buffers automatically when created
     snd.play();
   };
 

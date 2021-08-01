@@ -1,7 +1,10 @@
 <script>
-  import arrow from './arrow.svg';
+  import arrow from '/static/assets/arrow.svg';
   import { gameData } from '../stores';
   const nextStep = () => {
+    $gameData.enteredNotesAsID = [];
+    $gameData.enteredNotes = [];
+    $gameData.enteredNoteTypes = [];
     $gameData.tutorialState += 1;
   };
 </script>

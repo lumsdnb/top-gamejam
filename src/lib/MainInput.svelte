@@ -1,5 +1,5 @@
 <script>
-  import arrow from './arrow.svg';
+  import arrow from '/static/assets/arrow.svg';
   import InputPanel from '$lib/InputPanel.svelte';
   import { gameData } from '../stores';
   import NoteInputPanel from './NoteInputPanel.svelte';
@@ -42,7 +42,7 @@
       console.log(`note${noteID} has been entered`);
       // AUDIO HERE
       console.warn(noteID);
-      const snd = new Audio(`./static/sounds/note${noteID}.wav`); // buffers automatically when created
+      const snd = new Audio(`../static/sounds/note${noteID}.wav`); // buffers automatically when created
       snd.play();
     }
     console.log($gameData.enteredNotes);
@@ -59,7 +59,6 @@
   };
 </script>
 
-<p>{$gameData.enteredNoteTypes}</p>
 <div class="container">
   <NoteInputPanel
     bind:currentNote={noteNumberUI}

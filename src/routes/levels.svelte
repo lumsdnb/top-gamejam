@@ -1,15 +1,14 @@
 <script>
   import Level from '$lib/Level.svelte';
   import scales from '/static/scales.json';
+  import MessageBox from '$lib/MessageBox.svelte';
+  import { gameData, messageSystem } from '../stores.js';
   const cleanedScales = ['c', 'd', 'e', 'f', 'g', 'a', 'b'];
   //todo: filter out duplicate letters (sharps, flats)
   const parsedScales = JSON.parse(JSON.stringify(scales));
   parsedScales.forEach((element) => {
     console.log(element.scale);
   });
-
-  const details = document.querySelectorAll('details');
-  console.log(details + 'yo');
 </script>
 
 <h1 id="title">pick a scale</h1>
@@ -21,6 +20,9 @@
       imgAlt={`letter ${element.toUpperCase()}`}
     />
   {/each}
+</div>
+<div class="player-box">
+  <MessageBox player message={$messageSystem[$gameData.tutorialState][0]} />
 </div>
 
 <style>
@@ -36,5 +38,12 @@
       gap: 0.5em;
       overflow: hidden;
     }
+  }
+  .player-box {
+    position: absolute;
+    bottom: 1rem;
+    width: 90%;
+    left: 0%;
+    margin: 0 auto;
   }
 </style>

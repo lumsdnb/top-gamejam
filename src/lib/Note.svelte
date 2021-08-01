@@ -2,16 +2,17 @@
   export let sharp = false;
   export let flat = false;
   export let active = false;
+  import { fade, fly, blur } from 'svelte/transition';
 </script>
 
-<div class="note">
+<div class="note" in:fly={{ y: -5, duration: 100 }} out:blur={{ duration: 60 }}>
   {#if sharp}
     #
   {/if}
   {#if flat}
     b
   {/if}
-  <img src="./static/assets/note.png" alt="" />
+  <img src="/static/assets/note.png" alt="" />
   {#if active}
     <span class="indicator -active" />
   {:else}
@@ -28,7 +29,6 @@
       align-items: center;
       color: white;
       filter: drop-shadow(6px 6px 5px black);
-      font-size: 0.8rem;
     }
     .note > img {
       transform: scale(5) translateY(-0.07rem);

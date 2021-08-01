@@ -43,7 +43,9 @@
   const checkAnswer = () => {
     console.log('checking answer...');
 
+    //audio
     playPresentedChord();
+
     const majorChord = [
       $gameData.currentScale[0],
       $gameData.currentScale[2],
@@ -65,19 +67,6 @@
       $gameData.gold += 25;
       $gameData.wonRound = true;
       $gameData.canPresent = false;
-      //audio
-      const correctAudio1 = document.querySelector(
-        `audio[data-note=${$gameData.enteredNotes[0]}]`
-      );
-      correctAudio1.play();
-      const correctAudio2 = document.querySelector(
-        `audio[data-note=${$gameData.enteredNotes[1]}]`
-      );
-      correctAudio2.play();
-      const correctAudio3 = document.querySelector(
-        `audio[data-note=${$gameData.enteredNotes[2]}]`
-      );
-      correctAudio3.play();
     } else $gameData.tutorialState = 5;
   };
 
@@ -128,7 +117,7 @@
     message={$messageSystem[$gameData.tutorialState][1]}
   />
   {#if $gameData.tutorialState >= 4}
-    <section transition:fade>
+    <section class="center-flex" transition:fade>
       <NoteRenderer />
       {#if $gameData.tutorialState <= 5}
         <MainInput />
@@ -157,6 +146,12 @@
 <audio id="audio-msg-click" src="../static/sounds/msg-click.wav" />
 
 <style>
+  .center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
   @media (min-width: 320px) {
     section {
       padding: 1.5em 0.5em;
