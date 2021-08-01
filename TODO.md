@@ -15,6 +15,8 @@
     - [x] flats & sharps
   - correct answer (light up notes in red or green
   - change existing notes
+- [x] detect & play sharps and flats
+- [ ] render sharps and flats in note renderer
 
 ### player msg box
 

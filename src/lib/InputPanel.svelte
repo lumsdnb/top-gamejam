@@ -4,9 +4,16 @@
   export let values = 'x';
   export let currentValue;
 
+  const playUISound = () => {
+    let snd = new Audio('./static/sounds/click-high.wav'); // buffers automatically when created
+    snd.play();
+  };
+
   let i = 0;
+  const clickSound = document.querySelector(`#audio-click`);
   const incrementValue = () => {
     i++;
+    playUISound();
     if (i >= values.length) {
       i = 0;
     }
@@ -14,6 +21,7 @@
   };
   const decrementValue = () => {
     i--;
+    playUISound();
     if (i < 0) {
       i = values.length - 1;
     }

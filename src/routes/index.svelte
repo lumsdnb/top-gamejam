@@ -4,7 +4,7 @@
 
 <script>
   import NoteRenderer from '$lib/NoteRenderer.svelte';
-  import NoteInput from '$lib/NoteInput.svelte';
+  import MainInput from '$lib/MainInput.svelte';
   import MessageBox from '$lib/MessageBox.svelte';
   import ReceiveGoldUI from '$lib/ReceiveGoldUI.svelte';
   import Scroll from '$lib/Scroll.svelte';
@@ -13,12 +13,20 @@
 
   let characterMood = 'sad';
 
+  const playPresentedChord = () => {
+    console.log('playing chord');
+    $gameData.enteredNotesAsID.forEach((note, i) => {
+      console.log('it issssss . . .');
+      console.log(note);
+
+      const sound = new Audio(`../static/sounds/note${note}.wav`);
+      sound.play();
+    });
+  };
+
   const startGame = () => {
     $gameData.tutorialState = 1;
     $gameData.showScroll = true;
-    // audio test
-    /*const audio = document.getElementById('audio-c');
-    audio.play();*/
   };
   if ($gameData.tutorialState === 2) {
     $gameData.showUI = false;
@@ -31,13 +39,24 @@
     console.log('state 3 fired');
     $gameData.showUI = false;
   }
+
   const checkAnswer = () => {
     console.log('checking answer...');
+
+    playPresentedChord();
     const majorChord = [
       $gameData.currentScale[0],
       $gameData.currentScale[2],
       $gameData.currentScale[4],
     ];
+    const minorChord = [
+      $gameData.currentScale[0],
+      $gameData.currentScale[2],
+      $gameData.currentScale[4],
+    ];
+    // function timeFunction() {
+    //         setTimeout(function(){ alert("After 5 seconds!"); }, 5000);
+    // }
     console.log('chord needed: ' + majorChord);
     console.log('your chord: ' + $gameData.enteredNotes);
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
@@ -108,8 +127,8 @@
   {#if $gameData.tutorialState >= 4}
     <section transition:fade>
       <NoteRenderer />
-      {#if $gameData.tutorialState < 6}
-        <NoteInput />
+      {#if $gameData.tutorialState <= 5}
+        <MainInput />
       {:else}
         <div in:fly={{ y: -200, duration: 700 }} out:fade>
           <ReceiveGoldUI />
@@ -122,20 +141,6 @@
 <div class="player-box">
   <MessageBox player on:click={checkAnswer} />
 </div>
-
-<!--Individual note audio tags-->
-<audio data-note="c" id="audio-c" src="../static/sounds/note1.wav" />
-<audio data-note="cs" id="audio-csharp" src="../static/sounds/note2.wav" />
-<audio data-note="d" id="audio-d" src="../static/sounds/note3.wav" />
-<audio data-note="ds" id="audio-dsharp" src="../static/sounds/note4.wav" />
-<audio data-note="e" id="audio-e" src="../static/sounds/note5.wav" />
-<audio data-note="f" id="audio-f" src="../static/sounds/note6.wav" />
-<audio data-note="fs" id="audio-fsharp" src="../static/sounds/note7.wav" />
-<audio data-note="g" id="audio-g" src="../static/sounds/note8.wav" />
-<audio data-note="gs" id="audio-gsharp" src="../static/sounds/note9.wav" />
-<audio data-note="a" id="audio-a" src="../static/sounds/note10.wav" />
-<audio data-note="as" id="audio-asharp" src="../static/sounds/note11.wav" />
-<audio data-note="b" id="audio-b" src="../static/sounds/note12.wav" />
 
 <!--UI audio tags-->
 <audio id="audio-correct" src="../static/sounds/correct.wav" />
@@ -150,6 +155,7 @@
       padding: 1.5em 0.5em;
     }
     .welcome {
+      font-size: var(--fz1);
       margin: 20vh 0;
       display: flex;
       flex-direction: column;
@@ -158,7 +164,7 @@
     }
     .welcome > button {
       margin: 5rem;
-      font-size: 2rem;
+      font-size: var(--fz3);
       background-color: transparent;
       border: none;
       color: var(--accent-color2);
