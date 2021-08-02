@@ -122,6 +122,7 @@
       width: 100%;
       height: 100%;
       border-bottom: 3px solid white;
+      filter: drop-shadow(2px 2px 5px black);
     }
     .b1 {
       grid-area: block1;

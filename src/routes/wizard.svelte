@@ -1,5 +1,13 @@
 <script context="module">
   import { browser, dev } from '$app/env';
+  import NoteRenderer from '$lib/NoteRenderer.svelte';
+  import MainInput from '$lib/MainInput.svelte';
+  import MessageBox from '$lib/MessageBox.svelte';
+  import ReceiveGoldUI from '$lib/ReceiveGoldUI.svelte';
+  import Scroll from '$lib/Scroll.svelte';
+  import { fade, fly } from 'svelte/transition';
+  import { gameData, characterMessages } from '$lib/../stores';
+  import scalesJSON from '/static/scales.json';
 
   // we don't need any JS on this page, though we'll load
   // it in dev so that we get hot module replacement...
@@ -17,10 +25,27 @@
 <svelte:head>
   <title>scale the mountain!</title>
 </svelte:head>
+<div class="bg-img" />
 
 <h1 id="title">Scale the mountain!</h1>
 <div id="content">yo</div>
-<div class="bg-img" />
+<MessageBox wizard />
+
+<section transition:fade>
+  <NoteRenderer />
+  {#if $gameData.wonRound}
+    <!-- ------   you won some gold!------    -->
+    <div in:fly={{ y: -200, duration: 700 }} out:fade>
+      <ReceiveGoldUI />
+    </div>
+  {:else}
+    <MainInput />
+  {/if}
+</section>
+<div class="player-box">
+  <MessageBox player on:click message="i know how to do this" />
+  {$gameData.wonRound}
+</div>
 
 <style>
   .bg-img {
