@@ -66,10 +66,24 @@
     $gameData.completedLetters.push(roundLetter);
   };
 
+  const compareNoteTypes = (arr1, arr2) => {
+    console.log('one' + arr1);
+    console.log('two' + arr2);
+
+    if (arr1[0] == arr2[0]) {
+      if (arr1[1] == arr2[1]) {
+        if (arr1[2] == arr2[2]) {
+          return true;
+        }
+      }
+    }
+  };
+
   const checkAnswer = () => {
     console.log('checking answer...');
 
     playPresentedChord();
+    const types = $gameData.currentNoteTypes;
     const majorChord = [
       $gameData.currentScale[0],
       $gameData.currentScale[2],
@@ -86,7 +100,13 @@
     console.log('chord needed: ' + majorChord);
     console.log('your chord: ' + $gameData.enteredNotes);
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
-      correctAnswer();
+      //letters are correct, now check if the types are correct as well
+      // for example 0 0 1 0 1 0 2
+      if (
+        compareNoteTypes($gameData.enteredNoteTypes, $gameData.currentNoteTypes)
+      ) {
+        correctAnswer();
+      } else alert('note types dont match bro');
     } else charMessageID = 2;
   };
 
