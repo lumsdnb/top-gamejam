@@ -149,10 +149,17 @@
   .center-flex {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
   }
-  @media (min-width: 320px) {
+  @media (max-width: 320) {
+    .center-flex {
+      flex-direction: row;
+    }
+  }
+  @media (min-width: 750px) {
+    .center-flex {
+      flex-direction: column;
+    }
     section {
       padding: 1.5em 0.5em;
     }

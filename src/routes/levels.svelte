@@ -13,7 +13,15 @@
   });
 </script>
 
-<h1 id="title">pick a scale</h1>
+{#if $gameData.completedLetters.length == 7}
+  <div class="final-wizard">
+    <button onclick="window.location.href = '/wizard'"
+      >confront the wizard</button
+    >
+  </div>
+{:else}
+  <h1 id="title">pick a scale</h1>
+{/if}
 <div id="level-list">
   {#each letters as l, i (l)}
     <div>
@@ -21,7 +29,7 @@
         linkSrc={`/level/${l}`}
         imgSrc={`./static/forest-of-letters/${l}-happy.png`}
         imgAlt={`letter ${l}`}
-        message={scalesJSON[i].notes}
+        message={`hint: ${scalesJSON[i].notes}`}
       />
       {#if $gameData.completedLetters.includes(l)}
         <div class="play-status"><p>completed</p></div>
@@ -29,13 +37,7 @@
     </div>
   {/each}
 </div>
-{#if $gameData.completedLetters.length == 7}
-  <div class="final-wizard">
-    <button onclick="window.location.href = '/wizard'"
-      >confront the wizard</button
-    >
-  </div>
-{/if}
+
 <div class="player-box">
   <MessageBox player message={$messageSystem[$gameData.tutorialState][0]} />
 </div>
@@ -84,10 +86,19 @@
     }
   }
   .player-box {
-    position: absolute;
+    position: fixed;
     bottom: 1rem;
     width: 90%;
-    left: 0%;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0 auto;
+  }
+  @media (max-width: 321px) {
+    #level-list {
+      display: flex;
+      grid-template-columns: repeat(2, 50%);
+      gap: 0.5em;
+      overflow: hidden;
+    }
   }
 </style>

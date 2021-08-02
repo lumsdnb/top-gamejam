@@ -20,11 +20,20 @@
 
 <h1 id="title">Scale the mountain!</h1>
 <div id="content">yo</div>
+<div class="bg-img" />
 
 <style>
+  .bg-img {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: url(../static/scale-the-mountain/mountain-bg-mobile.png);
+  }
   body {
+    color: green;
     background-color: var(--primary-color);
-    background: url(/static/scale-the-mountain/mountain-bg-mobile.png) !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

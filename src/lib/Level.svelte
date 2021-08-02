@@ -31,14 +31,24 @@
 </div>
 
 <style>
+  #container {
+    user-select: none;
+    background-color: #394f57;
+    position: relative;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 3rem;
+    min-height: 100%;
+    font-size: 1rem;
+    filter: drop-shadow(2px 2px 2px black);
+  }
+
   @media (min-width: 320px) {
     #container {
-      background-color: #394f57;
-      position: relative;
       margin-bottom: 1rem;
       position: relative;
-      padding: 0.8em;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      padding: 1rem;
     }
     #container p {
       margin-bottom: 1em;
