@@ -63,13 +63,12 @@
       filter: drop-shadow(6px 6px 5px black);
     }
     .continue-button:hover {
-      transform: scale(1.1);
+      color: rgb(171, 177, 86);
+
       text-decoration: none;
-      padding: 1rem;
-      color: var(--accent-color2);
+      color: var(--accent-color);
       background-color: transparent;
       border: none;
-      font-size: var(--fz2);
       filter: drop-shadow(6px 6px 5px black);
     }
 
