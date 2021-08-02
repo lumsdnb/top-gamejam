@@ -8,7 +8,7 @@
   </div>
   <div class="scroll-text">
     <p>chords are build from different notes of the major scale</p>
-    <br
+    <br />
     <p>1st 3rd and 5th create a major chord</p>
   </div>
 </div>
