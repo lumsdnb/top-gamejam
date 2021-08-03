@@ -102,11 +102,11 @@
     if (arrayCompare(majorChord, $gameData.enteredNotes)) {
       //letters are correct, now check if the types are correct as well
       // for example 0 0 1 0 1 0 2
-      if (
-        compareNoteTypes($gameData.enteredNoteTypes, $gameData.currentNoteTypes)
-      ) {
+      // if (
+      //   compareNoteTypes($gameData.enteredNoteTypes, $gameData.currentNoteTypes)
+      // ) {
         correctAnswer();
-      } else alert('note types dont match bro');
+      // } else alert('note types dont match bro');
     } else charMessageID = 2;
   };
 

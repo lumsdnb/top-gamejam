@@ -28,40 +28,45 @@
 <div class="bg-img" />
 
 <h1 id="title">Scale the mountain!</h1>
-<div id="content">yo</div>
-<MessageBox wizard />
+<MessageBox wizard message="this is the part where you fight the wizard..." />
 
-<section transition:fade>
-  <NoteRenderer />
-  {#if $gameData.wonRound}
-    <!-- ------   you won some gold!------    -->
-    <div in:fly={{ y: -200, duration: 700 }} out:fade>
-      <ReceiveGoldUI />
-    </div>
-  {:else}
-    <MainInput />
-  {/if}
+<section transition:fade={{duration:5000}}>
+  Game demo created during <a href="https://itch.io/jam/top-jam-1">Odin Game Jam #1</a>
+  <br>
+  <p>built by <br>@lumsdnb <br>@DeeAyDan <br>@BLVCK_BEVRD <br>using SvelteKit</p>
 </section>
 <div class="player-box">
-  <MessageBox player on:click message="i know how to do this" />
+  <MessageBox player on:click message="thanks for playing!" />
   {$gameData.wonRound}
 </div>
 
 <style>
   .bg-img {
     position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     top: 0;
     z-index: -1;
     width: 100vw;
     height: 100vh;
     background: url(../static/scale-the-mountain/mountain-bg-mobile.png);
   }
+  .player-box{
+  position: fixed;
+  bottom: 0;
+}
   body {
     color: green;
     background-color: var(--primary-color);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+  }
+  section{
+    background-color: var(--bg2);
+    color: white;
+    padding: 3rem;
+    margin-top: 4rem;
   }
   @media (min-width: 320px) {
     #title {

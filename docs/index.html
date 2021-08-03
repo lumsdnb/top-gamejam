@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>bard.io</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-5f1c09a1.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-09e2d04d.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-6b01aedb.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-479d6723.js">
+		<link rel="modulepreload" href="/./_app/chunks/stores-3749ea87.js">
+		<link rel="modulepreload" href="/./_app/pages/index.svelte-980c3b6b.js">
+		<link rel="modulepreload" href="/./_app/chunks/ReceiveGoldUI-52e44754.js">
+		<link rel="modulepreload" href="/./_app/chunks/MessageBox-19b49161.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/vendor-d0a4fc24.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-a07ad341.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/index.svelte-e588be39.css">
+		<link rel="stylesheet" href="/./_app/assets/Scroll.svelte_svelte&type=style&lang-797d623e.css">
+		<link rel="stylesheet" href="/./_app/assets/MessageBox-dedc74af.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-5f1c09a1.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-6b01aedb.js"),
+						import("/./_app/pages/index.svelte-980c3b6b.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<nav id="h-nav" class="svelte-1ek6fij"><button class="svelte-1ek6fij"><img src="./static/assets/menu-icon-mobile.png" alt="Menu Button" id="menu-icon" class="svelte-1ek6fij"></button>
+    <h1 class="svelte-1ek6fij">game state 0</h1></nav>
+
+
+<main class="svelte-10xlxqk">
+
+<section class="welcome svelte-tbo5de"><h1>welcome to the forest of letters</h1>
+    <button class="svelte-tbo5de">enter</button></section>
+
+
+
+
+
+
+
+<div class="player-box svelte-tbo5de">
+<div class="message-box svelte-ojcbvi">
+  
+  <img id="player-img" src="/static/assets/favicon.png" alt="" class="svelte-ojcbvi">
+    
+    
+    <div class="typewriter-container svelte-1xd0fu9" style="--cursor-color: black"><p class="msg-txt svelte-ojcbvi">testing</p></div>
+
+    <button id="next-button" class="hidden svelte-ojcbvi">next</button>
+  
+  <div class="box b1 svelte-ojcbvi"></div>
+  <div class="box b2 svelte-ojcbvi"></div>
+  <div class="box b3 svelte-ojcbvi"></div>
+  <div class="box b4 svelte-ojcbvi"></div>
+</div></div>
+
+
+<audio id="audio-correct" src="../static/sounds/correct.wav"></audio>
+<audio id="audio-incorrect" src="../static/sounds/incorrect.wav"></audio>
+<audio id="audio-click-high" src="../static/sounds/click-high.wav"></audio>
+<audio id="audio-click" src="../static/sounds/click.wav"></audio>
+<audio id="audio-msg-click" src="../static/sounds/msg-click.wav"></audio>
+</main>
+
+
+
+	
+</div>
+	</body>
+</html>
