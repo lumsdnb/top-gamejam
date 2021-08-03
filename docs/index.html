@@ -36,14 +36,8 @@
       rel="modulepreload"
       href="./top-gamejam/_app/chunks/MessageBox-19b49161.js"
     />
-    <link
-      rel="stylesheet"
-      href="./top-gamejam/_app/assets/start-a8cd1609.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./top-gamejam/_app/assets/vendor-d0a4fc24.css"
-    />
+    <link rel="stylesheet" href="./_app/assets/start-a8cd1609.css" />
+    <link rel="stylesheet" href="./_app/assets/vendor-d0a4fc24.css" />
     <link
       rel="stylesheet"
       href="./top-gamejam./_app/assets/pages/__layout.svelte-a07ad341.css"
@@ -56,6 +50,7 @@
       rel="stylesheet"
       href="./_app/assets/Scroll.svelte_svelte&type=style&lang-797d623e.css"
     />
+
     <link rel="stylesheet" href="./_app/assets/MessageBox-dedc74af.css" />
 
     <script type="module">
@@ -72,8 +67,8 @@
           status: 200,
           error: null,
           nodes: [
-            import('./_app/pages/__layout.svelte-6b01aedb.js'),
-            import('./_app/pages/index.svelte-980c3b6b.js'),
+            import('./top-gamejam/_app/pages/__layout.svelte-6b01aedb.js'),
+            import('./top-gamejam/_app/pages/index.svelte-980c3b6b.js'),
           ],
           page: {
             host: location.host, // TODO this is redundant
@@ -109,7 +104,7 @@
           <div class="message-box svelte-ojcbvi">
             <img
               id="player-img"
-              src="./static/assets/favicon.png"
+              src="./top-gamejam/static/assets/favicon.png"
               alt=""
               class="svelte-ojcbvi"
             />
@@ -130,14 +125,26 @@
           </div>
         </div>
 
-        <audio id="audio-correct" src="./static/sounds/correct.wav"></audio>
-        <audio id="audio-incorrect" src="./static/sounds/incorrect.wav"></audio>
+        <audio
+          id="audio-correct"
+          src="./top-gamejam/static/sounds/correct.wav"
+        ></audio>
+        <audio
+          id="audio-incorrect"
+          src="./top-gamejam/static/sounds/incorrect.wav"
+        ></audio>
         <audio
           id="audio-click-high"
-          src="./static/sounds/click-high.wav"
+          src="./top-gamejam/static/sounds/click-high.wav"
         ></audio>
-        <audio id="audio-click" src="./static/sounds/click.wav"></audio>
-        <audio id="audio-msg-click" src="./static/sounds/msg-click.wav"></audio>
+        <audio
+          id="audio-click"
+          src="./top-gamejam/static/sounds/click.wav"
+        ></audio>
+        <audio
+          id="audio-msg-click"
+          src="./top-gamejam/static/sounds/msg-click.wav"
+        ></audio>
       </main>
     </div>
   </body>
