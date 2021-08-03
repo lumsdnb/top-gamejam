@@ -108,7 +108,7 @@
   }
   @media (min-width: 750px) {
     .container {
-      flex-direction: column;
+      /* flex-direction: column; */
     }
   }
   @media (max-width: 749px) {

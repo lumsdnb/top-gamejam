@@ -22,7 +22,11 @@
 <!-- Todo: find a better way to set the order of thes -->
 <div class="message-box">
   {#if player}
-    <img id="player-img" src="/static/assets/favicon.png" alt="" />
+{#if $gameData.finishedTutorial}
+<span class="gold-count" >{`${$gameData.gold} gold`}</span>
+{/if}
+  
+  <img id="player-img" src="/static/assets/favicon.png" alt="" />
     <!-- show btn when chord is built - todo: hide when  -->
     {#if $gameData.enteredNotes.length >= 3 && $gameData.canPresent}
       <button class="check-btn" on:click>present chord</button>
@@ -56,20 +60,29 @@
   .hidden {
     visibility: hidden;
   }
-  .next-btn {
+  #next-btn {
     position: absolute;
     bottom: 0;
+    width: 100%;
+    height: 100%;
   }
   .message-box {
     position: relative;
   }
+  .gold-count{
+    color: var(--accent-color2);
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    filter: drop-shadow(2px 2px 2px black);
+  }
   @media (min-width: 750px) {
+    
     .message-box {
       max-width: 520px;
       margin: auto;
       margin-right: auto;
-      margin-right: 0px;
-    }
+      }
   }
   /* add media query */
   .message-box {

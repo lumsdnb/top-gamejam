@@ -2,7 +2,7 @@ import { writable, readable } from 'svelte/store';
 
 export const gameData = writable({
   name: 'bob',
-  gold: 420,
+  gold: 0,
   // this keeps track of each letter, when user inputs a sharp or flat, add or subtract 1 to the position
   letters: ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
   letterPositions: [1, 3, 5, 6, 8, 10, 12],

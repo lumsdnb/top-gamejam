@@ -122,6 +122,7 @@
       {#if $gameData.tutorialState <= 5}
         <MainInput />
       {:else}
+      {$gameData.finishedTutorial=true}
         <div in:fly={{ y: -200, duration: 500 }} out:fade>
           <ReceiveGoldUI />
         </div>
@@ -150,6 +151,12 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+  }
+  .player-box {
+    position: fixed;
+    bottom: 1rem;
+    width: 90%;
+    margin: 0 auto;
   }
   @media (max-width: 320) {
     .center-flex {
@@ -184,12 +191,6 @@
     }
     .welcome > button:active {
       transform: scale(0.9);
-    }
-    .player-box {
-      position: absolute;
-      bottom: 1rem;
-      width: 90%;
-      margin: 0 auto;
     }
   }
 </style>
