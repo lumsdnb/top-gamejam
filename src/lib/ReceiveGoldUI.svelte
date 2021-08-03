@@ -2,7 +2,7 @@
   import arrow from '/static/assets/arrow.svg';
   import { gameData } from '../stores';
   const nextStep = () => {
-    $gameData.enteredNotesAsID = [];
+    $gameData.enteredHalfTones = [];
     $gameData.enteredNotes = [];
     $gameData.enteredNoteTypes = [];
     if ($gameData.finishedTutorial) {

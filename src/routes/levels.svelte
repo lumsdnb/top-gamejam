@@ -5,7 +5,7 @@
   import { gameData, messageSystem } from '../stores.js';
   import scalesJSON from '/static/scales.json';
 
-  let letters = $gameData.letters;
+  let letters = $gameData.lettersCToB;
   //todo: filter out duplicate letters (sharps, flats)
   const parsedScales = JSON.parse(JSON.stringify(scales));
   parsedScales.forEach((element) => {

@@ -8,11 +8,20 @@
   export let message = 'YALLS';
   export let wizard = false;
   const showNextButton = () => {
-    console.log('showing btn');
-    document.getElementById('next-button').classList.remove('hidden');
+    if (
+         $gameData.tutorialState!==0
+      && $gameData.tutorialState!==4
+      && $gameData.tutorialState!==5
+      && $gameData.tutorialState!==6
+      && $gameData.tutorialState!==8 
+      ) {
+      
+      console.log('showing btn');
+      document.getElementById('next-button').classList.remove('hidden');
+    }
   };
   const nextStep = () => {
-    //document.getElementById('next-button').classList.add('hidden');
+    document.getElementById('next-button').classList.add('hidden');
     if ($gameData.tutorialState !== 4) {
       $gameData.tutorialState += 1;
     }
@@ -22,9 +31,9 @@
 <!-- Todo: find a better way to set the order of thes -->
 <div class="message-box">
   {#if player}
-{#if $gameData.finishedTutorial}
-<span class="gold-count" >{`${$gameData.gold} gold`}</span>
-{/if}
+    {#if $gameData.finishedTutorial}
+    <span class="gold-count" >{`${$gameData.gold} gold`}</span>
+    {/if}
   
   <img id="player-img" src="/static/assets/favicon.png" alt="" />
     <!-- show btn when chord is built - todo: hide when  -->
@@ -60,15 +69,26 @@
   .hidden {
     visibility: hidden;
   }
-  #next-btn {
+  #next-button {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    right: 0;
     height: 100%;
+    width: 100%;
+    text-align: right;
+    line-height: 150px;
+    background-color: transparent;
+    color: var(--accent-color2);
   }
-  .message-box {
-    position: relative;
+  #next-button:hover{
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
   }
+  #next-button:active{
+    color: var(--accent-color2);
+    border: 2px solid var(--accent-color2);
+  }
+
   .gold-count{
     color: var(--accent-color2);
     position: absolute;
@@ -76,19 +96,10 @@
     left: .5rem;
     filter: drop-shadow(2px 2px 2px black);
   }
-  @media (min-width: 750px) {
-    
-    .message-box {
-      max-width: 520px;
-      margin: auto;
-      margin-right: auto;
-      }
-  }
   /* add media query */
   .message-box {
     color: white;
     width: 100%;
-    /* height: 5rem; */
     background-color: var(--bg2);
     border: 1px white solid;
     padding: 0.2em;
@@ -97,13 +108,12 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    /* display: grid;
-    grid-template-columns: ; */
   }
-
+  
   .msg-txt {
     padding: 0 1rem;
     font-size: var(--fz5);
+    user-select: none;
   }
   img {
     max-width: 25%;
@@ -128,7 +138,7 @@
     font-size: 2.2rem;
   }
   .check-btn:active {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
   .box {
     background-color: white;
@@ -152,4 +162,13 @@
     bottom: -0.2em;
     right: -0.2em;
   }
+
+  @media (min-width: 750px) {
+  
+  .message-box {
+    max-width: 520px;
+    margin: auto;
+    margin-right: auto;
+    }
+}
 </style>

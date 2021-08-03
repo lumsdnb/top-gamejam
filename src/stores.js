@@ -3,16 +3,19 @@ import { writable, readable } from 'svelte/store';
 export const gameData = writable({
   name: 'bob',
   gold: 0,
-  // this keeps track of each letter, when user inputs a sharp or flat, add or subtract 1 to the position
-  letters: ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
+  lettersCToB: ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
   letterPositions: [1, 3, 5, 6, 8, 10, 12],
   currentScale: ['c', 'd', 'e', 'f', 'g', 'a', 'b'],
-  currentScaleNum: [1, 3, 5, 6, 8, 10, 12],
-  currentNoteTypes: [],
+  // this keeps track of each letter, when user inputs a sharp or flat, add or subtract 1 to the position
+  currentHalftoneSteps: [1, 3, 5, 6, 8, 10, 12],
+  currentNoteTypes: [0, 0, 0, 0, 0, 0, 0],
   //type letters (string)
   enteredNotes: [],
-  //1-12 (halftones)
-  enteredNotesAsID: [],
+  // full array
+  enteredNotesWithTypes: [],
+  //1-12 - yes it starts at 1
+  enteredHalfTones: [],
+  // 0 is normal, 1 is sharp, 2 is flat
   enteredNoteTypes: [],
   activeNote: 'c',
   //state is incremented for tutorial message demo
@@ -34,16 +37,22 @@ export const gameData = writable({
 
 // this contains all messages currently in the game
 export const messageSystem = readable([
-  ['testing', ''],
+  [
+    'i was sent to spread music throughout the world, but i forgot how to play...',
+    '',
+  ],
   ['i wonder who left this here. how convenient...', ''],
-  ['', 'i am sad, so very very sad...'],
+  [
+    'i wonder who left this here. how convenient...',
+    'i am sad, so very very sad...',
+  ],
   [
     'i need to cheer this fella up, what did the scroll say again..?',
     'i am sad, so very very sad...',
   ],
   ['', ''],
   [
-    'that didnt work.. if i recall correctly, the scale was c, d e f g a b c',
+    'that didnt work.. if i recall correctly, the 1st, 3rd and 5th note on the scale make up a major chord',
     'no, that doesnt feel right...',
   ],
   ['', 'thank you.. <3'],

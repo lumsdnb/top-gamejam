@@ -14,7 +14,7 @@
   let characterMood = 'sad';
   const playPresentedChord = () => {
     console.log('playing chord');
-    $gameData.enteredNotesAsID.forEach((note, i) => {
+    $gameData.enteredHalfTones.forEach((note, i) => {
       console.log('it issssss . . .');
       console.log(note);
 
@@ -60,7 +60,11 @@
     // }
     console.log('chord needed: ' + majorChord);
     console.log('your chord: ' + $gameData.enteredNotes);
-    if (arrayCompare(majorChord, $gameData.enteredNotes)) {
+
+    //check if chord letters match
+    if (arrayCompareSorted(majorChord, $gameData.enteredNotes)) {
+    //now check if types match
+      if( $gameData.entered )
       characterMood = 'happy';
       $gameData.tutorialState = 6;
       $gameData.gold += 25;
@@ -70,7 +74,7 @@
     } else $gameData.tutorialState = 5;
   };
 
-  function arrayCompare(_arr1, _arr2) {
+  function arrayCompareSorted(_arr1, _arr2) {
     if (
       !Array.isArray(_arr1) ||
       !Array.isArray(_arr2) ||
@@ -78,11 +82,9 @@
     ) {
       return false;
     }
-
     // .concat() to not mutate arguments
     const arr1 = _arr1.concat().sort();
     const arr2 = _arr2.concat().sort();
-
     for (let i = 0; i < arr1.length; i++) {
       if (arr1[i] !== arr2[i]) {
         return false;
@@ -158,6 +160,28 @@
     width: 90%;
     margin: 0 auto;
   }
+  .welcome {
+    font-size: var(--fz1);
+    margin: 20vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .welcome > button {
+    margin: 5rem;
+    font-size: var(--fz3);
+    background-color: transparent;
+    border: none;
+    color: var(--accent-color2);
+    filter: drop-shadow(3px 5px 0px black);
+  }
+  .welcome > button:hover {
+    transform: scale(1.05);
+  }
+  .welcome > button:active {
+    transform: scale(0.9);
+  }
   @media (max-width: 320) {
     .center-flex {
       flex-direction: row;
@@ -169,28 +193,6 @@
     }
     section {
       padding: 1.5em 0.5em;
-    }
-    .welcome {
-      font-size: var(--fz1);
-      margin: 20vh 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-    }
-    .welcome > button {
-      margin: 5rem;
-      font-size: var(--fz3);
-      background-color: transparent;
-      border: none;
-      color: var(--accent-color2);
-      filter: drop-shadow(3px 5px 0px black);
-    }
-    .welcome > button:hover {
-      transform: scale(1.05);
-    }
-    .welcome > button:active {
-      transform: scale(0.9);
     }
   }
 </style>

@@ -8,13 +8,13 @@
   let noteTypeUI = 0;
   let noteType = ['', '♯', '♭'];
 
-  const addEnteredNote = (letterID, type) => {
+  const addSelectedNote = (letterID, type) => {
     console.table(letterID, type);
-    console.info($gameData.letterPositions[letterID]);
     let noteID = $gameData.letterPositions[letterID];
     if (
-      $gameData.enteredNotes.includes($gameData.letters[letterID]) === false
+      $gameData.enteredNotes.includes($gameData.lettersCToB[letterID]) === false
     ) {
+      //shifts half tones up or down
       switch (noteTypeUI) {
         case 1:
           noteID++;
@@ -32,24 +32,25 @@
         default:
           break;
       }
-      console.warn('id is' + noteID);
 
+      //push note with type
+      $gameData.enteredNotesWithTypes.push({"letter":$gameData.lettersCToB[letterID], "noteType":type})
       //push the letter
-      $gameData.enteredNotes.push($gameData.letters[letterID]);
+      $gameData.enteredNotes.push($gameData.lettersCToB[letterID]);
       $gameData.enteredNoteTypes.push(type);
-      $gameData.enteredNotesAsID.push(noteID);
-
+      $gameData.enteredHalfTones.push(noteID);
       console.log(`note${noteID} has been entered`);
       // AUDIO HERE
-      console.warn(noteID);
       const snd = new Audio(`../static/sounds/note${noteID}.wav`); // buffers automatically when created
       snd.play();
     }
-    console.log($gameData.enteredNotes);
+    console.table($gameData.enteredNotesWithTypes);
+
     $gameData.enteredNotes = $gameData.enteredNotes;
   };
   const removeEnteredNote = (note) => {
     console.log('removing note');
+    $gameData.enteredNotesWithTypes.pop()
     $gameData.enteredNotes.splice(-1, 1);
     $gameData.enteredNoteTypes.splice(-1, 1);
     $gameData.enteredNotes = $gameData.enteredNotes;
@@ -65,11 +66,11 @@
     bind:currentNoteType={noteTypeUI}
   />
   <div class="text-button-panel">
-    <button class="delete" on:click={removeEnteredNote}>delete note </button>
+    <button class="btn shade" on:click={removeEnteredNote}>delete note </button>
     <div id="submit-container">
       <button
-        on:click={addEnteredNote(noteNumberUI, noteTypeUI)}
-        class="submit-note shade">place note</button
+        on:click={addSelectedNote(noteNumberUI, noteTypeUI)}
+        class="btn shade">place note</button
       >
     </div>
   </div>
@@ -100,12 +101,25 @@
     padding: 1rem;
     font-size: var(--fz4);
   }
-  .submit-note:hover {
+  .btn:hover {
     transform: scale(1.05);
   }
-  .submit-note:active {
+  .btn:active {
     transform: scale(0.97);
   }
+  .btn {
+    color: var(--accent-color2);
+    border: none;
+    background-color: transparent;
+    user-select: none;
+  }
+  .btn {
+    padding: 1rem;
+    color: var(--accent-color2);
+    background-color: transparent;
+    border: none;
+  }
+
   @media (min-width: 750px) {
     .container {
       /* flex-direction: column; */
@@ -114,23 +128,6 @@
   @media (max-width: 749px) {
     .container {
       margin: 0 auto;
-    }
-  }
-  @media (min-width: 320px) {
-    .submit-note {
-      color: var(--accent-color2);
-      border: none;
-      background-color: transparent;
-      user-select: none;
-    }
-    .delete {
-      padding: 1rem;
-      color: var(--accent-color2);
-      background-color: transparent;
-      border: none;
-    }
-    .delete:hover {
-      transform: scale(1.05);
     }
   }
 </style>
