@@ -7,65 +7,35 @@
 
     <title>bard.io</title>
 
-    <link rel="modulepreload" href="./top-gamejam/_app/start-5f1c09a1.js" />
+    <link rel="modulepreload" href="./_app/start-5f1c09a1.js" />
+    <link rel="modulepreload" href="./_app/chunks/vendor-09e2d04d.js" />
+    <link rel="modulepreload" href="./_app/pages/__layout.svelte-6b01aedb.js" />
+    <link rel="modulepreload" href="./_app/chunks/stores-479d6723.js" />
+    <link rel="modulepreload" href="./_app/chunks/stores-3749ea87.js" />
+    <link rel="modulepreload" href="./_app/pages/index.svelte-980c3b6b.js" />
+    <link rel="modulepreload" href="./_app/chunks/ReceiveGoldUI-52e44754.js" />
+    <link rel="modulepreload" href="./_app/chunks/MessageBox-19b49161.js" />
+    <link rel="stylesheet" href="./_app/assets/start-a8cd1609.css" />
+    <link rel="stylesheet" href="./_app/assets/vendor-d0a4fc24.css" />
     <link
-      rel="modulepreload"
-      href="./top-gamejam/_app/chunks/vendor-09e2d04d.js"
-    />
-    <link
-      rel="modulepreload"
-      href="./top-gamejam/_app/pages/__layout.svelte-6b01aedb.js"
-    />
-    <link
-      rel="modulepreload"
-      href="./top-gamejam/_app/chunks/stores-479d6723.js"
-    />
-    <link
-      rel="modulepreload"
-      href="./top-gamejam/_app/chunks/stores-3749ea87.js"
-    />
-    <link
-      rel="modulepreload"
-      href="./top-gamejam/_app/pages/index.svelte-980c3b6b.js"
-    />
-    <link
-      rel="modulepreload"
-      href="./top-gamejam/_app/chunks/ReceiveGoldUI-52e44754.js"
-    />
-    <link
-      rel="modulepreload"
-      href="./top-gamejam/_app/chunks/MessageBox-19b49161.js"
+      rel="stylesheet"
+      href="./_app/assets/pages/__layout.svelte-a07ad341.css"
     />
     <link
       rel="stylesheet"
-      href="./top-gamejam/_app/assets/start-a8cd1609.css"
+      href="./_app/assets/pages/index.svelte-e588be39.css"
     />
     <link
       rel="stylesheet"
-      href="./top-gamejam/_app/assets/vendor-d0a4fc24.css"
+      href="./_app/assets/Scroll.svelte_svelte&type=style&lang-797d623e.css"
     />
-    <link
-      rel="stylesheet"
-      href="./top-gamejam/_app/assets/pages/__layout.svelte-a07ad341.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./top-gamejam/_app/assets/pages/index.svelte-e588be39.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./top-gamejam/_app/assets/Scroll.svelte_svelte&type=style&lang-797d623e.css"
-    />
-    <link
-      rel="stylesheet"
-      href="./top-gamejam/_app/assets/MessageBox-dedc74af.css"
-    />
+    <link rel="stylesheet" href="./_app/assets/MessageBox-dedc74af.css" />
 
     <script type="module">
-      import { start } from './top-gamejam/_app/start-5f1c09a1.js';
+      import { start } from './_app/start-5f1c09a1.js';
       start({
         target: document.querySelector('#svelte'),
-        paths: { base: '', assets: '/.' },
+        paths: { base: '', assets: './top-gamejam' },
         session: {},
         host: location.host,
         route: true,
@@ -75,8 +45,8 @@
           status: 200,
           error: null,
           nodes: [
-            import('./top-gamejam/_app/pages/__layout.svelte-6b01aedb.js'),
-            import('./top-gamejam/_app/pages/index.svelte-980c3b6b.js'),
+            import('./_app/pages/__layout.svelte-6b01aedb.js'),
+            import('./_app/pages/index.svelte-980c3b6b.js'),
           ],
           page: {
             host: location.host, // TODO this is redundant
@@ -93,7 +63,7 @@
       <nav id="h-nav" class="svelte-1ek6fij">
         <button class="svelte-1ek6fij">
           <img
-            src="./top-gamejam/static/assets/menu-icon-mobile.png"
+            src="./static/assets/menu-icon-mobile.png"
             alt="Menu Button"
             id="menu-icon"
             class="svelte-1ek6fij"
@@ -112,7 +82,7 @@
           <div class="message-box svelte-ojcbvi">
             <img
               id="player-img"
-              src="./top-gamejam/static/assets/favicon.png"
+              src="./static/assets/favicon.png"
               alt=""
               class="svelte-ojcbvi"
             />
@@ -133,26 +103,14 @@
           </div>
         </div>
 
-        <audio
-          id="audio-correct"
-          src="./top-gamejam/static/sounds/correct.wav"
-        ></audio>
-        <audio
-          id="audio-incorrect"
-          src="./top-gamejam/static/sounds/incorrect.wav"
-        ></audio>
+        <audio id="audio-correct" src="./static/sounds/correct.wav"></audio>
+        <audio id="audio-incorrect" src="./static/sounds/incorrect.wav"></audio>
         <audio
           id="audio-click-high"
-          src="./top-gamejam/static/sounds/click-high.wav"
+          src="./static/sounds/click-high.wav"
         ></audio>
-        <audio
-          id="audio-click"
-          src="./top-gamejam/static/sounds/click.wav"
-        ></audio>
-        <audio
-          id="audio-msg-click"
-          src="./top-gamejam/static/sounds/msg-click.wav"
-        ></audio>
+        <audio id="audio-click" src="./static/sounds/click.wav"></audio>
+        <audio id="audio-msg-click" src="./static/sounds/msg-click.wav"></audio>
       </main>
     </div>
   </body>
