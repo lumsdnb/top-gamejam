@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 * {
   box-sizing: border-box;
 }
 :root {
   font-size: 10px;
-  font-family: 'Press Start 2P', 'Arial';
+  font-family: "Press Start 2P", "Arial";
   --pure-white: #ffffff;
   --primary-color: #b9c6d2;
   --secondary-color: #d0dde9;
@@ -27,6 +27,11 @@
   --fz4: 1.563rem;
   --fz5: 1rem;
 }
+body {
+  padding: 0;
+  margin: 0;
+}
+
 img {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
