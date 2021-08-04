@@ -43,7 +43,7 @@ export const messageSystem = readable([
   ],
   ['i wonder who left this here. how convenient...', ''],
   [
-    'i wonder who left this here. how convenient...',
+    '                                                  ',
     'i am sad, so very very sad...',
   ],
   [
