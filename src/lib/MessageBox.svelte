@@ -108,6 +108,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    user-select: none;
   }
   
   .msg-txt {

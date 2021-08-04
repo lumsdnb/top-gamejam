@@ -41,7 +41,6 @@ import { loop_guard } from 'svelte/internal';
   </div>
 </div>
 
-<!-- <p>{`you entered ${$gameData.enteredNotes}`}</p> -->
 <style>
   #container {
     width: 100%;
