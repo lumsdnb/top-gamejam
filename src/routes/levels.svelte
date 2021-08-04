@@ -67,24 +67,6 @@
     filter: drop-shadow(2px 6px 0px black);
     transition: all 70ms ease-in-out;
   }
-  .play-status {
-    position: relative;
-    bottom: 3rem;
-    left: 3rem;
-  }
-  @media (min-width: 320px) {
-    #title {
-      text-transform: capitalize;
-      margin: 1em;
-      text-shadow: 1px 1px 2px #ff3e00;
-    }
-    #level-list {
-      display: grid;
-      grid-template-columns: repeat(2, 50%);
-      gap: 0.5em;
-      overflow: hidden;
-    }
-  }
   .player-box {
     position: fixed;
     bottom: 1rem;
@@ -92,6 +74,27 @@
     left: 50%;
     transform: translateX(-50%);
     margin: 0 auto;
+  }
+  .play-status p {
+    color: var(--accent-color2);
+    position: relative;
+    bottom: 3rem;
+    left: 3rem;
+    filter: drop-shadow(2px 2px 0px black);
+    user-select: none;
+  }
+  @media (min-width: 320px) {
+    #title {
+      text-transform: capitalize;
+      margin: 1em;      
+      text-shadow: 2px 2px 1px black;
+    }
+    #level-list {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      gap: 0.5em;
+      overflow: hidden;
+    }
   }
   @media (max-width: 321px) {
     #level-list {

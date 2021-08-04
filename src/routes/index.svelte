@@ -119,12 +119,11 @@
     message={$messageSystem[$gameData.tutorialState][1]}
   />
   {#if $gameData.tutorialState >= 4}
-    <section class="center-flex" transition:fade>
+    <section class="center-flex" transition:fade={{duration: 20}}>
       <NoteRenderer />
       {#if $gameData.tutorialState <= 5}
         <MainInput />
       {:else}
-      {$gameData.finishedTutorial=true}
         <div in:fly={{ y: -200, duration: 500 }} out:fade>
           <ReceiveGoldUI />
         </div>
@@ -141,18 +140,12 @@
   />
 </div>
 
-<!--UI audio tags-->
-<audio id="audio-correct" src="../static/sounds/correct.wav" />
-<audio id="audio-incorrect" src="../static/sounds/incorrect.wav" />
-<audio id="audio-click-high" src="../static/sounds/click-high.wav" />
-<audio id="audio-click" src="../static/sounds/click.wav" />
-<audio id="audio-msg-click" src="../static/sounds/msg-click.wav" />
-
 <style>
   .center-flex {
     display: flex;
     align-items: center;
     flex-direction: column;
+    
   }
   .player-box {
     position: fixed;
@@ -162,7 +155,7 @@
   }
   .welcome {
     font-size: var(--fz1);
-    margin: 20vh 0;
+    margin: 5vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;

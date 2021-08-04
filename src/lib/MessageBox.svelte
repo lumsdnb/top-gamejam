@@ -13,6 +13,7 @@
       && $gameData.tutorialState!==4
       && $gameData.tutorialState!==5
       && $gameData.tutorialState!==6
+      && $gameData.tutorialState!==7
       && $gameData.tutorialState!==8 
       ) {
       

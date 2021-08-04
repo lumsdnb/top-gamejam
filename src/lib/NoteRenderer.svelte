@@ -163,7 +163,11 @@ import { loop_guard } from 'svelte/internal';
         background-color: transparent;
         border: none;
         display: flex;
-        margin-bottom: 1em;
+        margin: 0.5em 0;
+  
+        max-width: 90vw;
+        position: relative;
+        margin-left: auto;
       }
       
     }

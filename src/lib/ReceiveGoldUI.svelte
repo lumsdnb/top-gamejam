@@ -7,8 +7,10 @@
     $gameData.enteredNoteTypes = [];
     if ($gameData.finishedTutorial) {
       $gameData.tutorialState = 7;
+    } else{
+        $gameData.finishedTutorial=true
+      $gameData.tutorialState += 1;
     }
-    $gameData.tutorialState += 1;
     $gameData.wonRound = false;
   };
 </script>

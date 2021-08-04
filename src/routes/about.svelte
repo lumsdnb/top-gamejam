@@ -36,7 +36,7 @@
       font-size: 1.5rem;
       text-transform: capitalize;
       margin-bottom: 1em;
-      text-shadow: 1px 1px 2px #ff3e00;
+      text-shadow: 2px 2px 1px black;
     }
     #content {
       background-color: rgba(129, 129, 129, 0.418);

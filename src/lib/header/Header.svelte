@@ -77,19 +77,20 @@
         <a sveltekit:prefetch href="/">Home</a>
       </li>
       {#if $gameData.tutorialState >= 7}
-        <li class:active={$page.path === '/levels'}>
-          <a sveltekit:prefetch href="/levels">Levels</a>
-        </li>
+      <li class:active={$page.path === '/levels'}>
+        <a sveltekit:prefetch href="/levels">Levels</a>
+      </li>
       {/if}
       <li class:active={$page.path === '/about'}>
         <a sveltekit:prefetch href="/about">About</a>
       </li>
     </ul>
   </div>
-{/if}
-
-<style>
-  @media (max-width: 649px) {
+  {/if}
+  
+  <style>
+  nav{z-index: 55;filter: drop-shadow(2px 2px 1px black);}
+  @media (max-width: 749px) {
     .desktop-nav{
       position: absolute;
       top: 4rem;
@@ -154,7 +155,7 @@
       max-width: 50px;
     }
   }
-  @media (min-width: 650px) {
+  @media (min-width: 750px) {
 
     #h-nav{
       position: absolute;
