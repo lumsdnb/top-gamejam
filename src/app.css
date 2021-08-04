@@ -33,7 +33,7 @@ img {
   image-rendering: crisp-edges;
 }
 
-@media (min-width: 320px) and (max-width: 749px) {
+@media (max-width: 749px) {
   body {
     background-color: var(--primary-color);
     background: url(/static/forest-of-letters/bg-forest.png);
