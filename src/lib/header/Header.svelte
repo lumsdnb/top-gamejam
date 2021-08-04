@@ -1,12 +1,27 @@
 <script>
   import { page } from '$app/stores';
   import { gameData } from '../../stores.js';
-
+  
   import logo from '/static/assets/favicon.png';
   let hamburger = true;
   let modal = false;
 </script>
 
+<nav class="desktop-nav">
+  <ul>
+    {#if $gameData.tutorialState >= 6}
+      <li class:active={$page.path === '/levels'}>
+        <a sveltekit:prefetch href="/levels">Levels</a>
+      </li>
+    {/if}
+    <li class:active={$page.path === '/'}>
+      <a sveltekit:prefetch href="/"><h1>bard.io</h1></a>
+    </li>
+    <li class:active={$page.path === '/about'}>
+      <a sveltekit:prefetch href="/about">About</a>
+    </li>
+  </ul>
+</nav>
 {#if hamburger}
   <nav id="h-nav">
     <button
@@ -20,7 +35,7 @@
         id="menu-icon"
       />
     </button>
-    <h1>game state {$gameData.tutorialState}</h1>
+    <h1>bard.io</h1>
   </nav>
 {:else}
   <!-- else content here -->
@@ -43,6 +58,7 @@
       </ul>
     </nav>
 
+
     <div class="corner">
       <!-- TODO put something else here? github link? -->
     </div>
@@ -60,7 +76,7 @@
       <li class:active={$page.path === '/'}>
         <a sveltekit:prefetch href="/">Home</a>
       </li>
-      {#if $gameData.tutorialState >= 6}
+      {#if $gameData.tutorialState >= 7}
         <li class:active={$page.path === '/levels'}>
           <a sveltekit:prefetch href="/levels">Levels</a>
         </li>
@@ -73,7 +89,12 @@
 {/if}
 
 <style>
-  @media (min-width: 320px) and (max-width: 749px) {
+  @media (max-width: 649px) {
+    .desktop-nav{
+      position: absolute;
+      top: 4rem;
+      visibility: hidden;
+    }
     #h-nav {
       /* background-color: aquamarine; */
       width: 100%;
@@ -133,11 +154,32 @@
       max-width: 50px;
     }
   }
-  @media (min-width: 750px) {
-    #menu-icon {
+  @media (min-width: 650px) {
+
+    #h-nav{
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .desktop-nav{
       width: 100%;
-      max-width: 50px;
-      left: 0px;
+      display: flex;
+align-items: center;
+justify-content: center;
+    }
+.desktop-nav>ul{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+    .desktop-nav li{
+      list-style: none;
+      padding: 0 1rem;
+    } 
+    #menu-icon {
+      visibility: hidden;
     }
     #h-nav > button {
       padding: 0.2em;
@@ -150,8 +192,12 @@
       border: none;
     }
     #h-nav {
-      display: inherit;
-    }
+      height: 3rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
     #h-nav > h1 {
       left: 50px;
       position: relative;
