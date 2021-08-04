@@ -155,7 +155,6 @@
   }
   .welcome {
     font-size: var(--fz1);
-    margin: 5vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,7 +174,10 @@
   .welcome > button:active {
     transform: scale(0.9);
   }
-  @media (max-width: 320) {
+  @media (max-width: 320px) {
+    .welcome{
+    margin: 2em 0;
+    }
     .center-flex {
       flex-direction: row;
     }
