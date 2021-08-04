@@ -30,7 +30,7 @@
       }}
     >
       <img
-        src="./static/assets/menu-icon-mobile.png"
+        src="/static/assets/menu-icon-mobile.png"
         alt="Menu Button"
         id="menu-icon"
       />
