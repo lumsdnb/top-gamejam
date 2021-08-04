@@ -20,7 +20,7 @@
 
 <h1 id="title">About</h1>
 <div id="content">
-  <p>[gamename] teaches you music theory in a fun way.</p>
+  <p><b>bard.io</b> teaches you music theory in a fun way.</p>
 
   <p>
     This project was created as part of the first <a
