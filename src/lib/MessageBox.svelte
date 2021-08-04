@@ -70,25 +70,7 @@
   .hidden {
     visibility: hidden;
   }
-  #next-button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    text-align: right;
-    line-height: 150px;
-    background-color: transparent;
-    color: var(--accent-color2);
-  }
-  #next-button:hover{
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-  }
-  #next-button:active{
-    color: var(--accent-color2);
-    border: 2px solid var(--accent-color2);
-  }
+
 
   .gold-count{
     color: var(--accent-color2);
@@ -119,7 +101,6 @@
   }
   img {
     max-width: 25%;
-    border: 1px solid orangered;
   }
   #player-img {
     background-color: #085e2b;
@@ -164,7 +145,28 @@
     bottom: -0.2em;
     right: -0.2em;
   }
+  @media (min-width: 320px) {
+  .message-box {
+    position: relative;
+  }
+   #next-button {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: transparent;
+    color: var(--accent-color2);
+    border: 1px solid var(--accent-color2);
+  }
+  #next-button:hover{
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+  }
+  #next-button:active{
+    color: var(--accent-color2);
+    border: 1px solid var(--accent-color2);
+  }
 
+  }
   @media (min-width: 750px) {
   
   .message-box {
