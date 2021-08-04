@@ -14,7 +14,7 @@
 
   console.log(roundLetter);
 
-  let noteIndex = $gameData.letters.findIndex((n) => {
+  let noteIndex = $gameData.lettersCToB.findIndex((n) => {
     if (n === roundLetter) {
       return true;
     }
@@ -32,8 +32,7 @@
 
   const playPresentedChord = () => {
     console.log('playing chord');
-    $gameData.enteredNotesAsID.forEach((note, i) => {
-      console.log(note);
+    $gameData.enteredHalfTones.forEach((note, i) => {
 
       const sound = new Audio(`../static/sounds/note${note}.wav`);
       sound.play();
