@@ -62,14 +62,14 @@ export const messageSystem = readable([
 
 export const characterMessages = readable({
   c: [
-    `It's been so long since I heared my favorite chord.`,
+    `It's been so long since I heard my favorite chord.`,
     `YES, this is the one, thank you.`,
     `I don't like this chord.`,
   ],
   d: [
     `I heard you play chords for the folks in this forest, show me something for my taste.`,
     `You got some talent boy, good job.`,
-    `This doesn't cut for me.`,
+    `This doesn't cut it for me.`,
   ],
   e: [
     `It's so annoying to live with this shape, my leg alway gets tangled in vines.`,
@@ -84,7 +84,7 @@ export const characterMessages = readable({
   g: [
     `The forest is filled with snakes, but they are more scared of you that you are scared to them.`,
     `Very well played! You are going places.`,
-    `I didn't enjoy this a bit.`,
+    `I didn't enjoy this at all.`,
   ],
   a: [
     `At night the fireflies will lit the forrest up. It's the most beautiful thing you'll ever see.`,
@@ -92,8 +92,8 @@ export const characterMessages = readable({
     `I bet you can do something better.`,
   ],
   b: [
-    `I heared you playing amazing music on your harp, show me something.`,
-    `It's been a while since I heared something this beautiful.`,
+    `I heard you playing amazing music on your harp, show me something.`,
+    `It's been a while since I heard something this beautiful.`,
     `Is that all you've got?`,
   ],
 });
