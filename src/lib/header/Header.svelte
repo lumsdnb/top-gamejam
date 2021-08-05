@@ -118,12 +118,13 @@
   @media (min-width: 320px) {
     /* navbar and button */
     #mobile-nav {
-    /* background-color: cadetblue; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    /* set a fix height - this might come back to bite me on the balls */
+    height: 9vh;
   }
  
     #mobile-nav > h1{
@@ -177,7 +178,14 @@
     font-size: 1.6rem;
   }
   }
-  
+  @media (min-width: 375px) {
+    #mobile-nav > h1{
+      font-size: 2.5rem;
+    }
+      #modal-inner li a {
+    font-size: 2rem;
+  }
+  }
   @media (min-width: 650px) {
     #mobile-nav {
       position: absolute;

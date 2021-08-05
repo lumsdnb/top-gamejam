@@ -40,11 +40,23 @@
     }
     #content {
       background-color: rgba(129, 129, 129, 0.418);
-      font-size: 1rem;
+      font-size: 1.5rem;
       padding: 0.4em;
     }
     #content p {
       margin-bottom: 1em;
+    }
+  }
+  @media (min-width: 375px) {
+    #title {
+      font-size: 2rem;
+      margin-bottom: 2em;
+    }
+    #content {
+      font-size: 1.8rem;
+    }
+    #content p {
+      margin-bottom: 1.5em;
     }
   }
 </style>

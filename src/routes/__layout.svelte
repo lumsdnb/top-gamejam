@@ -20,6 +20,8 @@
       width: 90%;
       margin: 0 auto;
       padding: .3em 0;
+      min-height: 91vh;
+      position: relative;
     }
   }
   @media (min-width: 750px) {

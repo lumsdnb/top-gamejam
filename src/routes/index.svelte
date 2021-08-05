@@ -132,7 +132,7 @@
   {/if}
 {/if}
 
-<div class="player-box">
+<div id="player-box" >
   <MessageBox
     player
     on:click={checkAnswer}
@@ -162,18 +162,18 @@
   .welcome > button:active {
     transform: scale(0.9);
   }
-  @media (max-width: 320px) {
+  @media (min-width: 320px) {
     .welcome{
-    margin: 2em 0;
+    position: fixed;
+    top: 50%;
+    margin-top: -50%;
     }
     .main-content{
       padding-top: 2.2em;
     }
-    .player-box {
-    position: fixed;
-    bottom: .5em;
-    width: 90%;
-    margin: 0 auto;
+    #player-box {
+      position: fixed;
+      bottom: 1em;
   }
   }
   @media (min-width: 750px) {
