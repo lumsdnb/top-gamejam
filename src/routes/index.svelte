@@ -119,7 +119,7 @@
     message={$messageSystem[$gameData.tutorialState][1]}
   />
   {#if $gameData.tutorialState >= 4}
-    <section class="center-flex" transition:fade={{duration: 20}}>
+    <section class="main-content" transition:fade={{duration: 20}}>
       <NoteRenderer />
       {#if $gameData.tutorialState <= 5}
         <MainInput />
@@ -141,18 +141,6 @@
 </div>
 
 <style>
-  .center-flex {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-  }
-  .player-box {
-    position: fixed;
-    bottom: .5em;
-    width: 90%;
-    margin: 0 auto;
-  }
   .welcome {
     font-size: var(--fz1);
     display: flex;
@@ -178,13 +166,21 @@
     .welcome{
     margin: 2em 0;
     }
-    .center-flex {
-      flex-direction: row;
+    .main-content{
+      padding-top: 2.2em;
     }
+    .player-box {
+    position: fixed;
+    bottom: .5em;
+    width: 90%;
+    margin: 0 auto;
+  }
   }
   @media (min-width: 750px) {
-    .center-flex {
-      flex-direction: column;
+    .main-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     }
     section {
       padding: 1.5em 0.5em;
