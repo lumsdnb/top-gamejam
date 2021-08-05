@@ -6,24 +6,9 @@
   let hamburger = true;
   let modal = false;
 </script>
-<!-- fuck is this  -->
-<!-- <nav class="desktop-nav">
-  <ul>
-    {#if $gameData.tutorialState >= 6}
-      <li class:active={$page.path === '/levels'}>
-        <a sveltekit:prefetch href="/levels">Levels</a>
-      </li>
-    {/if}
-    <li class:active={$page.path === '/'}>
-      <a sveltekit:prefetch href="/"><h1>bard.io</h1></a>
-    </li>
-    <li class:active={$page.path === '/about'}>
-      <a sveltekit:prefetch href="/about">About</a>
-    </li>
-  </ul>
-</nav> -->
 
 {#if hamburger}
+<!-- this id should be changed to something else -->
   <nav id="mobile-nav">
     <button
       on:click={() => {
@@ -36,7 +21,14 @@
         id="menu-icon"
       />
     </button>
-    <h1>bard.io</h1>
+    <a sveltekit:prefetch href="/">bard.io</a>
+      <div id="desktop-nav">
+      <a sveltekit:prefetch href="/">HOME</a>
+    {#if $gameData.tutorialState >= 6}
+        <a sveltekit:prefetch href="/levels">LEVELS</a>
+    {/if}
+      <a sveltekit:prefetch href="/about">ABOUT</a>
+  </div>
   </nav>
 {:else}
   <!-- else content here -->
@@ -95,27 +87,11 @@
   }
   
   /* desktop nav, hidden by default */
-  .desktop-nav {
-    position: absolute;
-    top: 4rem;
-    visibility: hidden;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .desktop-nav > ul {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .desktop-nav li {
-    list-style: none;
-    padding: 0 1rem;
-  }
   @media (min-width: 320px) {
+    /* desktop nav */
+    #desktop-nav{
+      display: none;
+    }
     /* navbar and button */
     #mobile-nav {
     width: 100%;
@@ -127,9 +103,10 @@
     height: 9vh;
   }
  
-    #mobile-nav > h1{
+    #mobile-nav > a{
       display: block;
       font-size: 1.86rem;
+      color: white;
     }
     #mobile-nav > button{
       background-color: transparent;
@@ -179,22 +156,36 @@
   }
   }
   @media (min-width: 375px) {
-    #mobile-nav > h1{
+    #mobile-nav > a{
       font-size: 2.5rem;
     }
       #modal-inner li a {
     font-size: 2rem;
   }
   }
-  @media (min-width: 650px) {
-    #mobile-nav {
-      position: absolute;
-      /* top: -5rem; */
-      visibility: hidden;
+  @media (min-width: 768px) {
+    #mobile-nav{
+      padding: 0 2em;
     }
-    .desktop-nav {
-      position: static;
-      visibility: visible;
+    #mobile-nav > a{
+      width: 20%;
+      font-size: 2rem;
+      text-align: center;
+       display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #mobile-nav > button{
+      display: none;
+    }
+    #desktop-nav{
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #desktop-nav a{
+      font-size: 2rem;
     }
   }
 </style>

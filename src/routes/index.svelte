@@ -176,14 +176,21 @@
       bottom: 1em;
   }
   }
-  @media (min-width: 750px) {
-    .main-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  @media (min-width: 768px) {
+    .welcome > h1{
+      font-size: 8rem;
     }
-    section {
-      padding: 1.5em 0.5em;
+        .welcome > button{
+      font-size: 7rem;
     }
+    /* set player-box to absolute so that when I split the game I won't have to move player box around */
+  #player-box {
+   position: absolute;
+    bottom: 5em;
+    width: 100%;
+  }
+  .scroll{
+    width: 72%;
+  }
   }
 </style>
