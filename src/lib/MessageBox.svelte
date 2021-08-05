@@ -94,11 +94,7 @@
     user-select: none;
   }
   
-  .msg-txt {
-    padding: 0 1rem;
-    font-size: var(--fz5);
-    user-select: none;
-  }
+
   img {
     max-width: 25%;
   }
@@ -149,6 +145,15 @@
   .message-box {
     position: relative;
   }
+    .msg-txt {
+    padding: 0 1rem;
+    font-size: var(--fz5);
+    user-select: none;
+    /* text doesnt stretch the message box from its original height */
+    margin: 0;
+    overflow: auto;
+    max-height: 70.5px;
+  }
    #next-button {
     position: absolute;
     bottom: 2px;
@@ -165,7 +170,6 @@
     color: var(--accent-color2);
     border: 1px solid var(--accent-color2);
   }
-
   }
   @media (min-width: 750px) {
   
