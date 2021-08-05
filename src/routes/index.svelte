@@ -189,5 +189,8 @@
     bottom: 5em;
     width: 100%;
   }
+  .scroll{
+    width: 72%;
+  }
   }
 </style>
