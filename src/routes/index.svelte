@@ -149,7 +149,7 @@
   }
   .player-box {
     position: fixed;
-    bottom: 1rem;
+    bottom: .5em;
     width: 90%;
     margin: 0 auto;
   }

@@ -15,11 +15,11 @@
     flex-direction: column;
     align-items: center;
   }
-  @media (min-width: 320px) and (max-width: 749px) {
+  @media (min-width: 320px) {
     main {
       width: 90%;
       margin: 0 auto;
-      /*background-color: bisque;*/
+      padding: .3em 0;
     }
   }
   @media (min-width: 750px) {
