@@ -164,8 +164,9 @@
   }
   @media (min-width: 320px) {
     .welcome{
-    position: absolute;
-    top: 15%;
+    position: fixed;
+    top: 50%;
+    margin-top: -50%;
     }
     .main-content{
       padding-top: 2.2em;
@@ -174,11 +175,6 @@
       position: fixed;
       bottom: 1em;
   }
-  }
-  @media (min-width: 375px) {
-    .welcome{
-      top: 18%;
-    }
   }
   @media (min-width: 750px) {
     .main-content {
