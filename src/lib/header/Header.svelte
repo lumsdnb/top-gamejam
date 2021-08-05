@@ -118,12 +118,13 @@
   @media (min-width: 320px) {
     /* navbar and button */
     #mobile-nav {
-    /* background-color: cadetblue; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    /* set a fix height - this might come back to bite me on the balls */
+    height: 9vh;
   }
  
     #mobile-nav > h1{
