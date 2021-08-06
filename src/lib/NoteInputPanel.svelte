@@ -41,51 +41,68 @@
 </script>
 
 <div class="panel">
-  <button on:click={() => incrementNote()}>
+  <button class="up-btn" on:click={() => incrementNote()}>
     <img class="up arrow shade" src={arrow} alt="up arrow" />
   </button>
 
   <div class="middle">
-    <button on:click={() => decrementNoteType()}>
+    <button class="middle-left" on:click={() => decrementNoteType()}>
       <img class="left arrow shade" src={arrow} alt="down arrow" />
     </button>
     <span class="current-note">
       <span>{notes[currentNote]}</span>
       <span class="note-type">{noteType[currentNoteType]}</span>
     </span>
-    <button on:click={() => incrementNoteType()}>
+    <button class="middle-right" on:click={() => incrementNoteType()}>
       <img class="right arrow shade" src={arrow} alt="up arrow" />
     </button>
   </div>
 
-  <button on:click={() => decrementNote()}>
+  <button class="down-btn" on:click={() => decrementNote()}>
     <img class="down arrow shade" src={arrow} alt="down arrow" />
   </button>
 </div>
 
 <!-- new sharp flat left right UI buttons -->
-<div />
 
 <style>
-  .middle {
-    display: flex;
-    flex-direction: row;
-  }
   @media (min-width: 320px) {
     .panel {
-      padding: 3rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      grid-template-areas: 
+      'up'
+      'middle'
+      'down'
+      ;
     }
-    .current-note {
+    .up-btn{
+      grid-area: up;
+    }
+  
+    .middle {
+      grid-area: middle;
+      display: grid;
+       grid-template-areas:'left middle right';
+    }
+    .middle-left{
+      grid-area: left;
+    }
+   .current-note {
+     grid-area: middle;
       position: relative;
       font-size: var(--fz1);
       padding: 0.5rem;
       color: #fd9979;
       filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.712));
     }
+    .middle-right{
+      grid-area: right;
+    }
+    .down-btn{
+      grid-area: down;
+    }
+
+   
 
     .note-type {
       position: absolute;
@@ -130,16 +147,18 @@
     }
 
     .left {
-      transform: rotateY(180deg) scale(0.7);
+      transform: rotateZ(-179.5deg);
     }
     .right {
-      transform: scale(0.7);
+      transform: rotateZ();
     }
     .up {
-      transform: rotateZ(90deg) rotateY(180deg);
+       transform-origin: center;
+      transform: rotate(-89.5deg);
     }
     .down {
-      transform: rotate(90deg);
+      transform-origin: center;
+      transform: rotate(89.5deg);
     }
 
     /* .shade {
@@ -163,5 +182,14 @@
       justify-content: center;
       align-items: center;
     }
+  }
+  @media (min-width: 768px) {
+     .arrow {
+      width: 6rem;
+      height: 6rem;
+    }
+   .current-note {
+     font-size: 5rem;
+   }
   }
 </style>

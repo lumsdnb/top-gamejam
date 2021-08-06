@@ -164,9 +164,9 @@
   }
   @media (min-width: 320px) {
     .welcome{
-    position: fixed;
-    top: 50%;
-    margin-top: -50%;
+    position: absolute;
+    top: 38%;
+    margin-top: -38%;
     }
     .main-content{
       padding-top: 2.2em;
@@ -175,6 +175,14 @@
       position: fixed;
       bottom: 1em;
   }
+  }
+  @media (min-width: 414px) {
+      .welcome > h1{
+      font-size: 4rem;
+    }
+        .welcome > button{
+      font-size: 2.5rem;
+    }
   }
   @media (min-width: 768px) {
     .welcome > h1{
@@ -192,5 +200,10 @@
   .scroll{
     width: 72%;
   }
+  /* main content */
+    .main-content{
+      padding: 0;
+      width: 100%;
+    }
   }
 </style>

@@ -171,21 +171,19 @@
     border: 1px solid var(--accent-color2);
   }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 414px) {
     .msg-txt {
-    font-size: 2rem;
-    max-height: inherit;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    max-height: 90.5px;
   }
-   #next-button {
-     font-size:  2rem;
-   }
-   .box {
+    .box {
     background-color: white;
-    width: 1em;
-    height: 1em;
+    width: .7em;
+    height: .7em;
     position: absolute;
   }
-    .b1 {
+   .b1 {
     top: -0.4em;
     left: -0.4em;
   }
@@ -200,6 +198,21 @@
   .b4 {
     bottom: -0.4em;
     right: -0.4em;
+  }
+  }
+  @media (min-width: 768px) {
+    .msg-txt {
+    font-size: 2rem;
+    max-height: inherit;
+  }
+   #next-button {
+     font-size:  2rem;
+   }
+   .box {
+    background-color: white;
+    width: 1em;
+    height: 1em;
+    position: absolute;
   }
   }
 </style>

@@ -44,7 +44,7 @@ import { loop_guard } from 'svelte/internal';
 <style>
   #container {
     width: 100%;
-    min-height: 15rem;
+    /* min-height: 15rem; */
   }
   /*basic note placement*/
   .note-container{
@@ -146,29 +146,31 @@ import { loop_guard } from 'svelte/internal';
       border-bottom: none;
     }
 
-    @media (min-width: 750px) {
-      #container {
-        background-color: transparent;
-        border: none;
-        display: flex;
-        margin-bottom: 1em;
-  
-        max-width: 520px;
-        position: relative;
-        margin-left: auto;
-      }
-    }
     @media (min-width: 320px) {
       #container {
         background-color: transparent;
         border: none;
         display: flex;
         margin: 0.5em 0;
-  
         max-width: 90vw;
         position: relative;
-        margin-left: auto;
+        /* margin-left: auto; */
       }
       
+    }
+    @media (min-width: 768px) {
+      #container {
+        /* background-color: rgba(102, 51, 153, 0.336); */
+      }
+    #grid-notes {
+      height: 20em;
+    }
+    #grid-lines {
+      height: 20em;
+
+    }
+  #clef img {
+    width: 130px;
+  }
     }
     </style>
