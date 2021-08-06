@@ -67,13 +67,12 @@
   />
   <div class="text-button-panel">
     <button class="btn shade" on:click={removeEnteredNote}>delete note </button>
-    <div id="submit-container">
       <button
         on:click={addSelectedNote(noteNumberUI, noteTypeUI)}
         class="btn shade">place note</button
       >
     </div>
-  </div>
+
 </div>
 
 <style>
@@ -88,10 +87,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
   }
   .text-button-panel > * {
-    padding: 1rem;
     font-size: var(--fz4);
   }
   .btn:hover {
@@ -113,14 +110,11 @@
     border: none;
   }
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     .container {
-      /* flex-direction: column; */
+     
+
     }
   }
-  @media (max-width: 749px) {
-    .container {
-      margin: 0 auto;
-    }
-  }
+
 </style>
