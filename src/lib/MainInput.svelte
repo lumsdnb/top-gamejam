@@ -111,10 +111,12 @@
   }
 
   @media (min-width: 768px) {
-    .container {
-     
-
+    .text-button-panel {
+      width: 100%;
     }
+     .text-button-panel > * {
+    font-size: 3rem;
+  }
   }
 
 </style>

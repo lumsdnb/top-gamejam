@@ -183,4 +183,13 @@
       align-items: center;
     }
   }
+  @media (min-width: 768px) {
+     .arrow {
+      width: 6rem;
+      height: 6rem;
+    }
+   .current-note {
+     font-size: 5rem;
+   }
+  }
 </style>

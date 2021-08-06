@@ -160,7 +160,7 @@ import { loop_guard } from 'svelte/internal';
     }
     @media (min-width: 768px) {
       #container {
-        background-color: rgba(102, 51, 153, 0.336);
+        /* background-color: rgba(102, 51, 153, 0.336); */
       }
     #grid-notes {
       height: 20em;
