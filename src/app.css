@@ -61,12 +61,6 @@ img {
   }
 }
 
-#svelte {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 h1,
 h2,
 p {
@@ -123,4 +117,14 @@ button:focus:not(:focus-visible) {
   h1 {
     font-size: 2.4rem;
   }
+}
+/* style for centering app if it exceeds width of 1200*/
+#svelte {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
