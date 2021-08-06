@@ -192,5 +192,10 @@
   .scroll{
     width: 72%;
   }
+  /* main content */
+    .main-content{
+      padding: 0;
+      width: 100%;
+    }
   }
 </style>
