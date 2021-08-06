@@ -113,11 +113,6 @@ button:focus:not(:focus-visible) {
   outline: none;
 }
 
-@media (min-width: 720px) {
-  h1 {
-    font-size: 2.4rem;
-  }
-}
 /* style for centering app if it exceeds width of 1200*/
 #svelte {
   min-height: 100vh;
@@ -127,4 +122,14 @@ button:focus:not(:focus-visible) {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+}
+@media (min-width: 414px) {
+  #svelte {
+    max-width: 414px;
+  }
+}
+@media (min-width: 768px) {
+  #svelte {
+    max-width: 768px;
+  }
 }
