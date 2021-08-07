@@ -205,4 +205,15 @@
       width: 100%;
     }
   }
+  @media (min-width: 1500px) {
+  .welcome {
+      position: absolute;
+      top: 75%;
+    }
+    #player-box {
+      position: absolute;
+      bottom: 5em;
+      width: 50%;
+    }
+}
 </style>
