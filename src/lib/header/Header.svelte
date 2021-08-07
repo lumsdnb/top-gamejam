@@ -15,11 +15,7 @@
         modal = true;
       }}
     >
-      <img
-        src="./static/assets/menu-icon-mobile.png"
-        alt="Menu Button"
-        id="menu-icon"
-      />
+      <img src="assets/menu-icon-mobile.png" alt="Menu Button" id="menu-icon" />
     </button>
     <a sveltekit:prefetch href="/">bard.io</a>
     <div id="desktop-nav">

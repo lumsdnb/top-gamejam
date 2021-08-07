@@ -30,10 +30,15 @@
 <h1 id="title">Scale the mountain!</h1>
 <MessageBox wizard message="this is the part where you fight the wizard..." />
 
-<section transition:fade={{duration:5000}}>
-  Game demo created during <a href="https://itch.io/jam/top-jam-1">Odin Game Jam #1</a>
-  <br>
-  <p>built by <br>@lumsdnb <br>@DeeAyDan <br>@BLVCK_BEVRD <br>using SvelteKit</p>
+<section transition:fade={{ duration: 5000 }}>
+  Game demo created during <a href="https://itch.io/jam/top-jam-1"
+    >Odin Game Jam #1</a
+  >
+  <br />
+  <p>
+    built by <br />@lumsdnb <br />@DeeAyDan <br />@BLVCK_BEVRD <br />using
+    SvelteKit
+  </p>
 </section>
 <div class="player-box">
   <MessageBox player on:click message="thanks for playing!" />
@@ -49,12 +54,12 @@
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    background: url(../static/scale-the-mountain/mountain-bg-mobile.png);
+    background: url(/static/scale-the-mountain/mountain-bg-mobile.png);
   }
-  .player-box{
-  position: fixed;
-  bottom: 0;
-}
+  .player-box {
+    position: fixed;
+    bottom: 0;
+  }
   body {
     color: green;
     background-color: var(--primary-color);
@@ -62,7 +67,7 @@
     background-size: cover;
     background-attachment: fixed;
   }
-  section{
+  section {
     background-color: var(--bg2);
     color: white;
     padding: 3rem;

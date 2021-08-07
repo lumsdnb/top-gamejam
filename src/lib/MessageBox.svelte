@@ -55,7 +55,7 @@
       <p class="msg-txt">{message}</p>
     </Typewriter>
     {#if wizard}
-      <img src={`/static/scale-the-mountain/monk.png`} alt="" />
+      <img src={`/scale-the-mountain/monk.png`} alt="" />
     {:else}
       <img src={`/static/forest-of-letters/${noteLetter}-${mood}.png`} alt="" />
     {/if}
