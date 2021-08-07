@@ -33,7 +33,6 @@
   const playPresentedChord = () => {
     console.log('playing chord');
     $gameData.enteredHalfTones.forEach((note, i) => {
-
       const sound = new Audio(`../static/sounds/note${note}.wav`);
       sound.play();
     });
@@ -104,7 +103,7 @@
       // if (
       //   compareNoteTypes($gameData.enteredNoteTypes, $gameData.currentNoteTypes)
       // ) {
-        correctAnswer();
+      correctAnswer();
       // } else alert('note types dont match bro');
     } else charMessageID = 2;
   };
@@ -149,7 +148,11 @@
   {/if}
 </section>
 <div class="player-box">
-  <MessageBox player on:click={checkAnswer} message="i know how to do this" />
+  <MessageBox
+    player
+    on:click={checkAnswer}
+    message="seems like the devs only implemented major chords so far..."
+  />
   {$gameData.wonRound}
 </div>
 

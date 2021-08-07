@@ -7,6 +7,7 @@ const config = {
       pages: 'build',
       assets: 'build',
       fallback: 'index.html',
+      ssr: 'false',
     }),
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',

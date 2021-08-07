@@ -56,7 +56,7 @@ export const messageSystem = readable([
     'no, that doesnt feel right...',
   ],
   ['', 'thank you.. <3'],
-  ['well that was.. something. i wonder what else i will find here..', ''],
+  ['well that was.. something. i wonder who else i will encounter here...', ''],
   ['hmmm.. where to go next...', ''],
 ]);
 
