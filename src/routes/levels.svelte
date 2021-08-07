@@ -38,10 +38,6 @@
   {/each}
 </div>
 
-<div class="player-box">
-  <MessageBox player message={$messageSystem[$gameData.tutorialState][0]} />
-</div>
-
 <style>
   .final-wizard {
     display: flex;
