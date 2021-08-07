@@ -63,9 +63,8 @@
 
     //check if chord letters match
     if (arrayCompareSorted(majorChord, $gameData.enteredNotes)) {
-    //now check if types match
-      if( $gameData.entered )
-      characterMood = 'happy';
+      //now check if types match
+      if ($gameData.entered) characterMood = 'happy';
       $gameData.tutorialState = 6;
       $gameData.gold += 25;
       $gameData.wonRound = true;
@@ -119,7 +118,7 @@
     message={$messageSystem[$gameData.tutorialState][1]}
   />
   {#if $gameData.tutorialState >= 4}
-    <section class="main-content" transition:fade={{duration: 20}}>
+    <section class="main-content" transition:fade={{ duration: 20 }}>
       <NoteRenderer />
       {#if $gameData.tutorialState <= 5}
         <MainInput />
@@ -132,7 +131,7 @@
   {/if}
 {/if}
 
-<div id="player-box" >
+<div id="player-box">
   <MessageBox
     player
     on:click={checkAnswer}
@@ -163,45 +162,45 @@
     transform: scale(0.9);
   }
   @media (min-width: 320px) {
-    .welcome{
-    position: absolute;
-    top: 38%;
-    margin-top: -38%;
+    .welcome {
+      position: absolute;
+      top: 38%;
+      margin-top: -38%;
     }
-    .main-content{
+    .main-content {
       padding-top: 2.2em;
     }
     #player-box {
       position: fixed;
       bottom: 1em;
-  }
+    }
   }
   @media (min-width: 414px) {
-      .welcome > h1{
+    .welcome > h1 {
       font-size: 4rem;
     }
-        .welcome > button{
+    .welcome > button {
       font-size: 2.5rem;
     }
   }
   @media (min-width: 768px) {
-    .welcome > h1{
-      font-size: 8rem;
+    .welcome > h1 {
+      font-size: 6rem;
     }
-        .welcome > button{
-      font-size: 7rem;
+    .welcome > button {
+      font-size: 4rem;
     }
     /* set player-box to absolute so that when I split the game I won't have to move player box around */
-  #player-box {
-   position: absolute;
-    bottom: 5em;
-    width: 100%;
-  }
-  .scroll{
-    width: 72%;
-  }
-  /* main content */
-    .main-content{
+    #player-box {
+      position: absolute;
+      bottom: 5em;
+      width: 100%;
+    }
+    .scroll {
+      width: 72%;
+    }
+    /* main content */
+    .main-content {
       padding: 0;
       width: 100%;
     }
