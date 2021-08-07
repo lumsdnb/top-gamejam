@@ -59,4 +59,16 @@
       margin-bottom: 1.5em;
     }
   }
+    @media (min-width: 768px) {
+    #title {
+      font-size: 3rem;
+      margin-bottom: 2em;
+    }
+    #content {
+      font-size: 2.5rem;
+    }
+    #content p {
+      margin-bottom: 2em;
+    }
+  }
 </style>

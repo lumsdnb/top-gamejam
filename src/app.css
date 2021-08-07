@@ -120,7 +120,6 @@ button:focus:not(:focus-visible) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
 }
 @media (min-width: 414px) {
@@ -131,5 +130,10 @@ button:focus:not(:focus-visible) {
 @media (min-width: 768px) {
   #svelte {
     max-width: 768px;
+  }
+}
+@media (min-width: 1500px) {
+  #svelte {
+    max-width: 1500px;
   }
 }
