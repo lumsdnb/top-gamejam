@@ -113,10 +113,12 @@
 
 <!-- main screen -->
 {#if $gameData.tutorialState >= 2}
+<div id="npc-box">
   <MessageBox
     mood={characterMood}
     message={$messageSystem[$gameData.tutorialState][1]}
   />
+</div>
   {#if $gameData.tutorialState >= 4}
     <section class="main-content" transition:fade={{ duration: 20 }}>
       <NoteRenderer />
@@ -174,6 +176,10 @@
       position: fixed;
       bottom: 1em;
     }
+
+     #npc-box{
+      width: 100%;
+    }
   }
   @media (min-width: 414px) {
     .welcome > h1 {
@@ -181,6 +187,9 @@
     }
     .welcome > button {
       font-size: 2.5rem;
+    }
+     .main-content {
+      padding-top: 10em;
     }
   }
   @media (min-width: 768px) {
@@ -201,7 +210,7 @@
     }
     /* main content */
     .main-content {
-      padding: 0;
+      padding-top: 8em;
       width: 100%;
     }
   }
@@ -215,8 +224,16 @@
       bottom: 5em;
       width: 50%;
     }
+    #npc-box{
+      width: 50%;
+    }
      .scroll {
       width: 32%;
+    }
+     .main-content {
+      padding-top: 4em;
+      width: 50%;
+
     }
 }
 </style>
