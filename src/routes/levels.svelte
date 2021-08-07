@@ -29,7 +29,7 @@
         linkSrc={`/level/${l}`}
         imgSrc={`./static/forest-of-letters/${l}-happy.png`}
         imgAlt={`letter ${l}`}
-        message={`hint: ${scalesJSON[i].notes}`}
+        message={`hint: ${scalesJSON[i].notesFull}`}
       />
       {#if $gameData.completedLetters.includes(l)}
         <div class="play-status"><p>completed</p></div>
@@ -86,7 +86,7 @@
   @media (min-width: 320px) {
     #title {
       text-transform: capitalize;
-      margin: 1em;      
+      margin: 1em;
       text-shadow: 2px 2px 1px black;
     }
     #level-list {

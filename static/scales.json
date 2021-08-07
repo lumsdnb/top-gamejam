@@ -2,37 +2,44 @@
   {
     "scale": "c",
     "notes": ["c", "d", "e", "f", "g", "a", "b"],
-    "noteTypes": [0, 0, 0, 0, 0, 0, 0]
+    "noteTypes": [0, 0, 0, 0, 0, 0, 0],
+    "notesFull": ["c", "d", "e", "f", "g", "a", "b"]
   },
   {
     "scale": "d",
     "notes": ["d", "e", "f", "g", "a", "b ", "c"],
-    "noteTypes": [0, 0, 1, 0, 0, 0, 1]
+    "noteTypes": [0, 0, 1, 0, 0, 0, 1],
+    "notesFull": ["d", "e", "f#", "g", "a", "b ", "c#"]
   },
   {
     "scale": "e",
     "notes": ["e", "f", "g", "a", "b", "c", "d"],
-    "noteTypes": [0, 1, 1, 0, 0, 1, 1]
+    "noteTypes": [0, 1, 1, 0, 0, 1, 1],
+    "notesFull": ["e", "f#", "g#", "a", "b", "c#", "d#"]
   },
   {
     "scale": "f",
     "notes": ["f", "g", "a", "b", "c", "d", "e"],
-    "noteTypes": [0, 0, 0, 2, 0, 0, 0]
+    "noteTypes": [0, 0, 0, 2, 0, 0, 0],
+    "notesFull": ["f", "g", "a", "bb", "c", "d", "e"]
   },
   {
     "scale": "g",
     "notes": ["g", "a", "b", "c", "d", "e", "f"],
-    "noteTypes": [0, 0, 0, 0, 0, 0, 1]
+    "noteTypes": [0, 0, 0, 0, 0, 0, 1],
+    "notesFull": ["g", "a", "b", "c", "d", "e", "f#"]
   },
 
   {
     "scale": "a",
     "notes": ["a", "b", "c", "d", "e", "f", "g"],
-    "noteTypes": [0, 0, 1, 0, 0, 1, 1]
+    "noteTypes": [0, 0, 1, 0, 0, 1, 1],
+    "notesFull": ["a", "b", "c#", "d", "e", "f#", "g#"]
   },
   {
     "scale": "b",
     "notes": ["b", "c", "d", "e", "f", "g", "a"],
-    "noteTypes": [0, 1, 1, 0, 1, 1, 1]
+    "noteTypes": [0, 1, 1, 0, 1, 1, 1],
+    "notesFull": ["b", "c#", "d#", "e", "f#", "g#", "a#"]
   }
 ]
