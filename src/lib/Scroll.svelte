@@ -2,34 +2,38 @@
   export let type = 'c';
 </script>
 
+<div class="scroll">
+  <img src={`/static/scrolls/${type}-major-scroll.png`} alt="" />
+  <div class="scroll-text">
+    <p>chords are build from different notes of the major scale</p>
 
-  <div class="scroll">
-    <img src={`/static/scrolls/${type}-major-scroll.png`} alt="" />
-    <div class="scroll-text">
-      <p>chords are build from different notes of the major scale</p>
-
-      <p>1st 3rd and 5th create a major chord</p>
-    </div>
+    <p>
+      The <strong>first</strong>,<strong>third</strong> and
+      <strong>5th</strong> note create a major chord
+    </p>
   </div>
-
+</div>
 
 <style>
   p {
     color: black;
   }
+  strong {
+    color: rgb(34, 22, 37);
+  }
   @media (min-width: 320px) {
     .scroll {
-     width: 100%;
-     height: 100%;
-     position: relative;
+      width: 100%;
+      height: 100%;
+      position: relative;
     }
-   .scroll img {
+    .scroll img {
       object-fit: contain;
       width: 100%;
-      height:100%;
+      height: 100%;
     }
-    .scroll-text{
-      position:absolute;
+    .scroll-text {
+      position: absolute;
       bottom: 6%;
       text-align: center;
       padding: 3em 4rem;
@@ -43,9 +47,9 @@
       margin-bottom: 1.5em;
     }
   }
-/* this will probably be irrelevant */
+  /* this will probably be irrelevant */
   @media (min-width: 768px) {
-    .scroll-text{
+    .scroll-text {
       bottom: 10%;
     }
     .scroll-text p {

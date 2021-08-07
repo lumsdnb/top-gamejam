@@ -62,7 +62,7 @@ export const messageSystem = readable([
 
 export const characterMessages = readable({
   c: [
-    `It's been so long since I heard my favorite chord.`,
+    `It's been so long since I heard my favorite chord...`,
     `YES, this is the one, thank you.`,
     `I don't like this chord.`,
   ],
@@ -87,7 +87,7 @@ export const characterMessages = readable({
     `I didn't enjoy this at all.`,
   ],
   a: [
-    `At night the fireflies will lit the forrest up. It's the most beautiful thing you'll ever see.`,
+    `At night the fireflies light up the forest. It's the most beautiful thing you'll ever see.`,
     `This was amazing.`,
     `I bet you can do something better.`,
   ],
