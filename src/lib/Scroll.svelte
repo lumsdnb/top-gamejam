@@ -54,6 +54,17 @@
     }
     .scroll-text p {
       font-size: 1.5rem;
+
+    }
+  }
+  @media (min-width: 1500px) {
+     .scroll-text {
+      bottom: 5.5%;
+      padding: 3em 6rem;
+
+    }
+    .scroll-text p {
+      font-size: 1.5rem;
     }
   }
 </style>

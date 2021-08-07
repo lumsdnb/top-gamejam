@@ -215,5 +215,8 @@
       bottom: 5em;
       width: 50%;
     }
+     .scroll {
+      width: 32%;
+    }
 }
 </style>
